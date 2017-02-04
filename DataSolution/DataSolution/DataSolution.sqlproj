@@ -63,6 +63,7 @@
     <Folder Include="Exercise\Tables" />
     <Folder Include="Workout" />
     <Folder Include="Workout\Tables" />
+    <Folder Include="Seed Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\Schemas\Exercise.sql" />
@@ -72,5 +73,12 @@
     <Build Include="Workout\Tables\Workout.sql" />
     <Build Include="Workout\Tables\WorkoutType.sql" />
     <Build Include="Workout\Tables\WorkoutDetail.sql" />
+    <Build Include="Exercise\Tables\PushPullIndicator.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSolution.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Seed Scripts\Seed Lookups.PostDeployment.sql" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 (
 	[ExerisePerformedAt]	TIME(7)				NOT NULL,
 	[WorkoutType]			VARCHAR(100)		NOT NULL,
-	[WorkoutPerformedOn]	DATETIME			NOT NULL,
+	[WorkoutPerformedOn]	DATE				NOT NULL,
 	[ExerciseId]			INT					NOT NULL,	
 	[NumberOfSets]			INT					NOT NULL,
 	[NumberOfReps]			INT					NOT NULL,
