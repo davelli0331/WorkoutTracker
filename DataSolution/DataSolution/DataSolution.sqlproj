@@ -74,6 +74,7 @@
     <Build Include="Workout\Tables\WorkoutType.sql" />
     <Build Include="Workout\Tables\WorkoutDetail.sql" />
     <Build Include="Exercise\Tables\PushPullIndicator.sql" />
+    <Build Include="Exercise\Tables\ExerciseMuscleGroups.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSolution.publish.xml" />
