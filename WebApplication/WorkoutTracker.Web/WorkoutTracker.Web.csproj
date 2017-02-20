@@ -134,12 +134,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.min.js" />
     <Content Include="Scripts\r.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="Views\NavBar\NavBar.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\web.config" />
