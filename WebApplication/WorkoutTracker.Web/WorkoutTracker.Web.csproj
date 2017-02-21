@@ -137,6 +137,7 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.min.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\r.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\underscore.js" />

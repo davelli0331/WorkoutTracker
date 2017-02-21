@@ -1,4 +1,4 @@
-define('Views/NavBar', ['backbone'], function (Backbone) {
+define(['backbone'], function (Backbone) {
     return Backbone.View.extend({
 
         el: '.navbar',
