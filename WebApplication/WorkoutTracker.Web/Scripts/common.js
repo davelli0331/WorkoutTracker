@@ -10,7 +10,9 @@ var require = {
 
         backbone: 'Scripts/backbone',
 
-        Views: 'Views'
+        Views: 'Views',
+
+        Utilities: 'Scripts/Utility'
     },
 
     shim: {
