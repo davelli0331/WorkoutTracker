@@ -8,10 +8,16 @@ define(['backbone', 'Views/NavBar/NavBar', 'Utilities/EventAggregator'],
 
                 EventAggregator.listenFor({
                     eventName: 'NavBarClick',
-                    handler: function () {
-                        
+                    handler: function (e) {
+                        if (e == 'BuildWorkouts') {
+                            this.loadBuildWorkouts();
+                        }
                     }
                 });
+            },
+
+            loadBuildWorkouts: function () {
+                
             }
         });
     });

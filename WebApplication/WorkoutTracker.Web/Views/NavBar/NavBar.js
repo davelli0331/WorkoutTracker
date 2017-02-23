@@ -8,12 +8,18 @@ define(['backbone', 'Utilities/EventAggregator'], function (Backbone, EventAggre
         },
 
         events: {
-            'click #a-build-workouts': 'loadBuildworkouts'
+            'click #a-build-workouts': 'loadBuildworkouts',
+            'click #a-track-workouts': 'loadTrackWorkouts'
         },
 
         loadBuildworkouts: function (e) {
             EventAggregator
                 .fireEvent('NavBarClick', 'BuildWorkouts');
+        },
+
+        loadTrackWorkouts: function (e) {
+            EventAggregator
+                .fireEvent('NavBarClick', 'TrackWorkouts');
         }
 
     });
