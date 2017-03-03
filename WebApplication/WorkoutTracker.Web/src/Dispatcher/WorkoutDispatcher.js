@@ -1,3 +1,3 @@
 import { Dispatcher } from 'flux';
 
-export default new WorkoutDispatcher();
+export default new Dispatcher();
