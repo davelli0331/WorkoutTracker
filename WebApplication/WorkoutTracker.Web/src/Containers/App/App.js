@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        Hello!
-      </div>
-    );
-  }
+const App = (props) => {
+  return (
+    <div>
+      <h3>Workout Templates</h3>
+      <ul>
+          {
+            props.workoutTemplates.valueSeq().map((template, index) => {
+              return (
+                <li key={template.name}>template.name</li>
+              )
+            })
+          }
+      </ul>
+    </div>
+  )
 }
 
 export default App;

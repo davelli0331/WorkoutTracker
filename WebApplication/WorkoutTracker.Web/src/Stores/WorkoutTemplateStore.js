@@ -1,5 +1,5 @@
-import Immutable from 'Immutable';
-import { ReduceStore } from 'flux';
+import Immutable from 'immutable';
+import { ReduceStore } from 'flux/utils';
 import WorkoutTemplateTypes from '../Actions/WorkoutTemplateActionTypes';
 import WorkoutDispatcher from '../Dispatcher/WorkoutDispatcher';
 import WorkoutTemplate from '../Data/WorkoutTemplate';
@@ -27,4 +27,4 @@ class WorkoutTemplateStore extends ReduceStore {
     }
 }
 
-export default WorkoutTemplateStore;
+export default new WorkoutTemplateStore();
