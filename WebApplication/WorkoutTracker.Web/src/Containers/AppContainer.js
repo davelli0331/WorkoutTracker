@@ -1,6 +1,7 @@
-import App from './App/App';
+import App from '../Views/App/App';
 import { Container } from 'flux/utils';
 import WorkoutTemplateStore from '../Stores/WorkoutTemplateStore';
+import WorkoutTemplateActions from '../Actions/WorkoutTemplateActions';
 
 function getStores() {
     return [
@@ -10,7 +11,9 @@ function getStores() {
 
 function getState() {
     return {
-        workoutTemplates: WorkoutTemplateStore.getState()
+        workoutTemplates: WorkoutTemplateStore.getState(),
+
+        onAddWorkoutTemplate: WorkoutTemplateActions.addWorkoutTemplate
     }
 }
 
