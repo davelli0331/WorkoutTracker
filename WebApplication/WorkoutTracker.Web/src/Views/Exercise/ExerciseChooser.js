@@ -13,7 +13,11 @@ class ExerciseChooser extends React.Component {
                 <ul>
                     {
                         [...this.props.exercises.values()].map((exercise, index) => {
-                            return (<li key={exercise.id}>{exercise.name}</li>);
+                            return (
+                                <li key={exercise.id}>
+                                    <input type="checkbox"/> {exercise.name}
+                                </li>
+                            );
                         })
                     }
                 </ul>

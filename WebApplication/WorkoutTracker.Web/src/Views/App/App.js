@@ -1,7 +1,7 @@
 import React from 'react';
 import AddWorkoutTemplate from '../../Components/WorkoutTemplateComponents/AddWorkoutTemplate';
 import NavigationBar from '../NavigationBar/NavigationBar';
-import WorkoutTemplateList from '../WorkoutTemplate/List';
+import WorkoutTemplateIndex from '../WorkoutTemplate/Index';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,13 +21,12 @@ class App extends React.Component {
   render() {
     var activeComponent = this.state.activeNavigationLink == 'TrackWorkouts'
       ? null
-      : <WorkoutTemplateList workoutTemplates={this.props.workoutTemplates} />
+      : <WorkoutTemplateIndex />
 
     return (
       <div>
         <NavigationBar onLinkClicked={this.navigationLinkClicked.bind(this)} />
         {activeComponent}
-        <AddWorkoutTemplate onAddWorkoutTemplateClicked={this.props.onAddWorkoutTemplate} />
       </div>
     )
   }

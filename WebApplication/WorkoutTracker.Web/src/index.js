@@ -7,9 +7,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
-
-import WorkoutTemplateActions from './Actions/WorkoutTemplateActions';
-
-WorkoutTemplateActions.addWorkoutTemplate('Test 1');
-WorkoutTemplateActions.addWorkoutTemplate('Test 2');
-WorkoutTemplateActions.addWorkoutTemplate('Test 3');
