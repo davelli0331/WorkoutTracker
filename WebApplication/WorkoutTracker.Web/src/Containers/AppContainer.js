@@ -1,20 +1,30 @@
 import App from '../Views/App/App';
+import React from 'react';
 import { Container } from 'flux/utils';
 import WorkoutTemplateStore from '../Stores/WorkoutTemplateStore';
 import WorkoutTemplateActions from '../Actions/WorkoutTemplateActions';
 
-function getStores() {
-    return [
-        WorkoutTemplateStore
-    ];
-}
+class AppContainer extends React.Component {
+    static getStores() {
+        return [
+            WorkoutTemplateStore
+        ];
+    }
 
-function getState() {
-    return {
-        workoutTemplates: WorkoutTemplateStore.getState(),
+    static calculateState(prevState) {
+        return {
+            workoutTemplates: WorkoutTemplateStore.getState(),
 
-        onAddWorkoutTemplate: WorkoutTemplateActions.addWorkoutTemplate
+            onAddWorkoutTemplate: WorkoutTemplateActions.addWorkoutTemplate
+        }
+    }
+
+    render() {
+        return <App
+            workoutTemplates={this.state.workoutTemplates}
+            onAddWorkoutTemplate={this.state.onAddWorkoutTemplate}
+        />
     }
 }
 
-export default Container.createFunctional(App, getStores, getState);
+export default Container.create(AppContainer);

@@ -1,22 +1,36 @@
 import React from 'react';
 import AddWorkoutTemplate from '../../Components/WorkoutTemplateComponents/AddWorkoutTemplate';
+import NavigationBar from '../NavigationBar/NavigationBar';
+import WorkoutTemplateList from '../WorkoutTemplate/List';
 
-const App = ({ workoutTemplates, onAddWorkoutTemplate }) => {
-  return (
-    <div>
-      <h3>Workout Templates</h3>
-      <ul>
-        {
-          workoutTemplates.valueSeq().map((template, index) => {
-            return (
-              <li key={template.name}>{template.name}</li>
-            )
-          })
-        }
-      </ul>
-      <AddWorkoutTemplate onAddWorkoutTemplateClicked={onAddWorkoutTemplate} />
-    </div>
-  )
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeNavigationLink: 'TrackWorkouts'
+    };
+  }
+
+  navigationLinkClicked(clickedLink) {
+    this.setState({
+      activeNavigationLink: clickedLink
+    });
+  }
+
+  render() {
+    var activeComponent = this.state.activeNavigationLink == 'TrackWorkouts'
+      ? null
+      : <WorkoutTemplateList workoutTemplates={this.props.workoutTemplates} />
+
+    return (
+      <div>
+        <NavigationBar onLinkClicked={this.navigationLinkClicked.bind(this)} />
+        {activeComponent}
+        <AddWorkoutTemplate onAddWorkoutTemplateClicked={this.props.onAddWorkoutTemplate} />
+      </div>
+    )
+  }
 }
 
 export default App;

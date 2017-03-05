@@ -23,6 +23,7 @@ class WorkoutTemplateStore extends ReduceStore {
 
             default:
                 return state;
+                break;
         }
     }
 }
