@@ -13,12 +13,24 @@ class ExerciseContainer extends React.Component {
 
     static calculateState(prevState) {
         return {
-            getExercises: ExerciseActions.fetch
+            exercises: ExerciseStore.getState()
         };
     }
 
+    componentWillMount() {
+        ExerciseStore.addListener(() => {
+            this.setState({
+                exercises: ExerciseStore.getState()
+            });
+        });
+    }
+
+    componentDidMount() {
+        ExerciseActions.fetch();
+    }
+
     render() {
-        return (<ExerciseChooser getExercises={this.state.getExercises} />);
+        return (<ExerciseChooser exercises={this.state.exercises} />);
     }
 }
 

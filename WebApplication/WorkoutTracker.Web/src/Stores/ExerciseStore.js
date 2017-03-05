@@ -2,6 +2,7 @@ import { ReduceStore } from 'flux/utils';
 import Dispatcher from '../Dispatcher/WorkoutDispatcher';
 import Immutable from 'immutable';
 import ExerciseActionTypes from '../Actions/ExerciseActions/ExerciseActionTypes';
+import Exercise from '../Data/Exercise';
 
 class ExerciseStore extends ReduceStore {
     constructor() {
@@ -15,7 +16,18 @@ class ExerciseStore extends ReduceStore {
     reduce(state, action) {
         switch (action.type) {
             case ExerciseActionTypes.FETCH_EXERCISES:
-                return state.merge(action.exercises);
+                let asRecords = action.exercises.map((e) => {
+                    return new Exercise({
+                        name: e.ExerciseName,
+                        id: e.ExerciseId
+                    });
+                });
+
+                asRecords.forEach((e) => {
+                    state = state.set(e.id, e);
+                });
+
+                return state;
                 break;
 
             default:
