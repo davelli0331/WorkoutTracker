@@ -28,11 +28,9 @@ class ExerciseStore extends ReduceStore {
                 });
 
                 return state;
-                break;
 
             default:
                 return state;
-                break;
         }
     }
 }

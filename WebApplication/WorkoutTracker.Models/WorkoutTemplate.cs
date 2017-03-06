@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WorkoutTracker.Models
 {
     public class WorkoutTemplate
     {
+        public string TemplateName { get; set; }
+        public string TemplateDescription { get; set; }
+        public List<Exercise> Exercises { get; set; }
     }
 }

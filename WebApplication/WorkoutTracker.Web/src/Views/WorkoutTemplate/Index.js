@@ -1,5 +1,6 @@
 import React from 'react';
 import Add from './Add';
+import ListContainer from '../../Containers/WorkoutTemplateListContainer';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class WorkoutTemplateIndex extends React.Component {
         let shownComponent;
 
         if (this.state.mode === 'list') {
-            // shownComponent = <ExerciseList />;
+             shownComponent = <ListContainer />;
         } else {
             shownComponent = <Add />
         }

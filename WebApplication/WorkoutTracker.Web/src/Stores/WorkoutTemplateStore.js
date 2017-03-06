@@ -3,6 +3,7 @@ import { ReduceStore } from 'flux/utils';
 import WorkoutTemplateTypes from '../Actions/WorkoutTemplateActionTypes';
 import WorkoutDispatcher from '../Dispatcher/WorkoutDispatcher';
 import WorkoutTemplate from '../Data/WorkoutTemplate';
+import Exercise from '../Data/Exercise';
 
 class WorkoutTemplateStore extends ReduceStore {
     constructor() {
@@ -19,11 +20,31 @@ class WorkoutTemplateStore extends ReduceStore {
                 return state.set(action.name, new WorkoutTemplate({
                     name: action.name
                 }));
-                break;
+
+            case WorkoutTemplateTypes.FETCH_WORKOUT_TEMPLATE:
+                let asRecords = action.workoutTemplates.map((w, i) => {
+                    return new WorkoutTemplate({
+                        name: w.TemplateName,
+                        description: w.TemplateDescription,
+                        exercises: w.Exercises.map((e, index) => {
+                            return new Exercise({
+                                id: e.ExerciseId,
+                                name: e.ExerciseName,
+                                pushPull: e.PushPullIndicator,
+                                instruction: e.Instruction
+                            });
+                        })
+                    });
+                });
+
+                asRecords.forEach((w) => {
+                    state = state.set(w.name, w);
+                });
+
+                return state;
 
             default:
                 return state;
-                break;
         }
     }
 }
