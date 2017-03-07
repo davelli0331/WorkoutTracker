@@ -5,6 +5,8 @@ import Immutable from 'immutable';
 import Actions from '../Actions/WorkoutTemplateActions';
 import ListView from '../Views/WorkoutTemplate/List';
 
+let removeToken;
+
 class WorkoutTemplateListContainer extends React.Component {
     static getStores() {
         return [
@@ -19,7 +21,7 @@ class WorkoutTemplateListContainer extends React.Component {
     }
 
     componentWillMount() {
-        WorkoutTemplateStore.addListener(() => {
+        removeToken = WorkoutTemplateStore.addListener(() => {
             this.setState({
                 workoutTemplates: WorkoutTemplateStore.getState()
             });
@@ -28,6 +30,10 @@ class WorkoutTemplateListContainer extends React.Component {
 
     componentDidMount() {
         Actions.fetch();
+    }
+
+    componentWillUnmount() {
+        removeToken.remove();
     }
 
     render() {

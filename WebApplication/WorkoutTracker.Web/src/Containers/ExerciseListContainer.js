@@ -17,6 +17,10 @@ class ExerciseContainer extends React.Component {
         };
     }
 
+    constructor(props) {
+        super(props);
+    }
+
     componentWillMount() {
         ExerciseStore.addListener(() => {
             this.setState({
@@ -30,7 +34,9 @@ class ExerciseContainer extends React.Component {
     }
 
     render() {
-        return (<ExerciseChooser exercises={this.state.exercises} />);
+        return (<ExerciseChooser 
+                    exercises={this.state.exercises} 
+                    exerciseClicked={this.props.onExerciseclicked} />);
     }
 }
 

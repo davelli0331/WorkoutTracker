@@ -3,8 +3,6 @@ import React from 'react';
 class ExerciseChooser extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {};
     }
 
     render() {
@@ -15,7 +13,7 @@ class ExerciseChooser extends React.Component {
                         [...this.props.exercises.values()].map((exercise, index) => {
                             return (
                                 <li key={exercise.id}>
-                                    <input type="checkbox"/> {exercise.name}
+                                    <input type="checkbox" onChange={(e) => this.props.exerciseClicked(exercise.id, e.target.checked)} /> {exercise.name}
                                 </li>
                             );
                         })

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using WorkoutTracker.Api.ViewModels.WorkoutTemplate;
 using WorkoutTracker.Models;
 
 namespace WorkoutTracker.Api.Controllers
@@ -26,6 +27,11 @@ namespace WorkoutTracker.Api.Controllers
                     }
                 }
             });
+        }
+
+        public IHttpActionResult Post(Add viewModel)
+        {
+            return Ok();
         }
     }
 }

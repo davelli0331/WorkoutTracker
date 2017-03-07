@@ -4,8 +4,16 @@ class Api {
     fetch(url, callback) {
         axiom
             .get(url)
-            .then(function (response) {
+            .then((response) => {
                 callback(response.data);
+            });
+    }
+
+    post(url, data, callback) {
+        axiom
+            .post(url, data)
+            .then((response) => {
+                callback(response);
             });
     }
 }
