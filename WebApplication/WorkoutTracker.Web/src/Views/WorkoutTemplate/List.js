@@ -1,8 +1,9 @@
 import React from 'react';
 
-const WorkoutTemplateList = ({ workoutTemplates }) => {
+const WorkoutTemplateList = ({ workoutTemplates, addWorkoutTemplateclicked }) => {
     return (
         <div>
+            <a href="#" onClick={() => addWorkoutTemplateclicked('add')}>Add new template</a>
             <ul>
                 {
                     [...workoutTemplates.values()].map((template, index) => {

@@ -15,22 +15,27 @@ class WorkoutTemplateIndex extends React.Component {
         this.setState({
             mode: e
         });
+    }
 
+    onWorkoutTemplateAdded() {
+        this.setState({
+            mode: 'list'
+        });
     }
 
     render() {
         let shownComponent;
 
         if (this.state.mode === 'list') {
-             shownComponent = <ListContainer />;
+            shownComponent = <ListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
         } else {
-            shownComponent = <Add />
+            shownComponent = <Add OnWorkoutTemplateAdded={this.onWorkoutTemplateAdded.bind(this)} />
         }
 
         return (
             <div>
                 <h3>Workout Templates</h3>
-                <a href="#" onClick={() => this.onChangeModeClicked('add')}>Add new template</a>
+                
                 {shownComponent}
             </div>
         );

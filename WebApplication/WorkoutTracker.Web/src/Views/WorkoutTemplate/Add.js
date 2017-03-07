@@ -40,6 +40,8 @@ class WorkoutTemplateAdd extends React.Component {
             name: this.state.name,
             exercises: this.state.exercises.toJS()
         });
+
+        this.props.OnWorkoutTemplateAdded();
     }
 
     render() {

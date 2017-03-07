@@ -20,6 +20,10 @@ class WorkoutTemplateListContainer extends React.Component {
         };
     }
 
+    constructor(props) {
+        super(props);
+    }
+
     componentWillMount() {
         removeToken = WorkoutTemplateStore.addListener(() => {
             this.setState({
@@ -37,7 +41,7 @@ class WorkoutTemplateListContainer extends React.Component {
     }
 
     render() {
-        return <ListView workoutTemplates={this.state.workoutTemplates} />
+        return <ListView workoutTemplates={this.state.workoutTemplates} addWorkoutTemplateclicked={this.props.onAddClicked} />
     }
 };
 
