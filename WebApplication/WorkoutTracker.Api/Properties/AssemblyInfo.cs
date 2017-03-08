@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WorkoutTracker.Web")]
+[assembly: AssemblyTitle("WorkoutTracker.Api")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WorkoutTracker.Web")]
+[assembly: AssemblyProduct("WorkoutTracker.Api")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ca4ff61e-0fd7-4ecd-98d1-3b88fc463b5c")]
+[assembly: Guid("e08a8297-f691-4951-9b05-13f2341efbc6")]
 
 // Version information for an assembly consists of the following four values:
 //

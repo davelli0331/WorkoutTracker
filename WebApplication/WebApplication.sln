@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{25F17851-2D29-40A4-952B-ECDD0ACD02B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Api", "WorkoutTracker.Api\WorkoutTracker.Api.csproj", "{E08A8297-F691-4951-9B05-13F2341EFBC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Models", "WorkoutTracker.Models\WorkoutTracker.Models.csproj", "{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{B37DCE2C-64C8-405F-927F-739FF77F81ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.CommandsAndQueries", "WorkoutTracker.CommandsAndQueries\WorkoutTracker.CommandsAndQueries.csproj", "{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Contracts", "WorkoutTracker.Contracts\WorkoutTracker.Contracts.csproj", "{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{25F17851-2D29-40A4-952B-ECDD0ACD02B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25F17851-2D29-40A4-952B-ECDD0ACD02B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25F17851-2D29-40A4-952B-ECDD0ACD02B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25F17851-2D29-40A4-952B-ECDD0ACD02B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08A8297-F691-4951-9B05-13F2341EFBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08A8297-F691-4951-9B05-13F2341EFBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08A8297-F691-4951-9B05-13F2341EFBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08A8297-F691-4951-9B05-13F2341EFBC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
