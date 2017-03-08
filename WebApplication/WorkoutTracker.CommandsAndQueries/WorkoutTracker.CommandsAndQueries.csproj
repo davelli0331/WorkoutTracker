@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{17CFB0A8-A338-441A-A8B8-A3D5B2FA850F}</ProjectGuid>
+    <ProjectGuid>{78B6D102-D49D-4857-B8DD-3E16DD8015AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WorkoutTracker.CommandsAndQueries</RootNamespace>
     <AssemblyName>WorkoutTracker.CommandsAndQueries</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,12 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandQueue.cs" />
+    <Compile Include="CommandDispatchers\WorkoutTemplateCommandDispatcher.cs" />
+    <Compile Include="Commands\WorkoutTemplateCommands\AddWorkoutTemplateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Contracts.csproj">
-      <Project>{b79d88fb-3ad9-49e9-9e46-f2bcc448460d}</Project>
+      <Project>{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}</Project>
       <Name>WorkoutTracker.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
