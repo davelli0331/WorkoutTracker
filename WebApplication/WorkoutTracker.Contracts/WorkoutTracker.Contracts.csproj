@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICommandQueue.cs" />
-    <Compile Include="ICommand.cs" />
+    <Compile Include="Domains\IWorkoutTemplateDomain.cs" />
+    <Compile Include="Commands\ICommandQueue.cs" />
+    <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

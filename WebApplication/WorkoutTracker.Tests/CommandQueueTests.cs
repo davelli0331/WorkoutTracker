@@ -1,7 +1,7 @@
 ﻿using Moq;
 using System;
 using WorkoutTracker.CommandsAndQueries.Commands;
-using WorkoutTracker.Contracts;
+using WorkoutTracker.Contracts.Commands;
 using Xunit;
 
 namespace WorkoutTracker.Tests

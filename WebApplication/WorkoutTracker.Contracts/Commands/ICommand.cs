@@ -1,4 +1,4 @@
-﻿namespace WorkoutTracker.Contracts
+﻿namespace WorkoutTracker.Contracts.Commands
 {
     public interface ICommand
     {

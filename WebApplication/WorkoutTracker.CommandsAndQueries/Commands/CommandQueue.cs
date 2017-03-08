@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using WorkoutTracker.Contracts;
+using WorkoutTracker.Contracts.Commands;
 
 namespace WorkoutTracker.CommandsAndQueries.Commands
 {
