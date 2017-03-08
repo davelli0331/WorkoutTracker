@@ -1,9 +1,5 @@
 ﻿using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WorkoutTracker.CommandsAndQueries.Commands;
 using WorkoutTracker.Contracts;
 using Xunit;
@@ -11,7 +7,7 @@ using Xunit;
 namespace WorkoutTracker.Tests
 {
     public class CommandQueueTests
-    {
+    { 
         [Fact]
         public void CommandQueue_Single_Command_Succeeds()
         {
