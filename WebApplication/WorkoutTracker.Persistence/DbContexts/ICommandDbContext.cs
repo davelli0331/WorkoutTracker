@@ -1,4 +1,4 @@
-﻿namespace WorkoutTracker.Contracts.DbContexts
+﻿namespace WorkoutTracker.Persistence.DbContexts
 {
     public interface ICommandDbContext
     {

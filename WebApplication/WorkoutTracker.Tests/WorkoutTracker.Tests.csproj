@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandDispatcherTests\WorkoutTemplateDispatcherTests.cs" />
     <Compile Include="CommandTests\WorkoutTemplateCommandTests\AddWorkoutTemplateCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,20 +76,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WorkoutTracker.CommandsAndQueries\WorkoutTracker.CommandsAndQueries.csproj">
-      <Project>{78b6d102-d49d-4857-b8dd-3e16dd8015aa}</Project>
-      <Name>WorkoutTracker.CommandsAndQueries</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Contracts.csproj">
+    <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj">
       <Project>{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}</Project>
-      <Name>WorkoutTracker.Contracts</Name>
+      <Name>WorkoutTracker.Core.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkoutTracker.Models\WorkoutTracker.Models.csproj">
+      <Project>{318e149a-2ba8-4b41-9348-4a4e1faebc23}</Project>
+      <Name>WorkoutTracker.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkoutTracker.Persistence\WorkoutTracker.Persistence.csproj">
+      <Project>{7b38c277-9da9-4e66-95ad-2c3eaad91f25}</Project>
+      <Name>WorkoutTracker.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CommandDispatcherTests\" />
     <Folder Include="ControllerTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

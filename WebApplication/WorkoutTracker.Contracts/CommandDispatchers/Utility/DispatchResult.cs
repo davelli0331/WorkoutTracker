@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WorkoutTracker.Contracts.CommandDispatchers.Utility
+namespace WorkoutTracker.Dispatchers.CommandDispatchers.Utility
 {
     public class DispatchResult
     {

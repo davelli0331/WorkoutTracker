@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Api", "Worko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Models", "WorkoutTracker.Models\WorkoutTracker.Models.csproj", "{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Core.Implementation", "WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj", "{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Persistence", "WorkoutTracker.Persistence\WorkoutTracker.Persistence.csproj", "{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{B37DCE2C-64C8-405F-927F-739FF77F81ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Contracts", "WorkoutTracker.Contracts\WorkoutTracker.Contracts.csproj", "{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.CommandsAndQueries", "WorkoutTracker.CommandsAndQueries\WorkoutTracker.CommandsAndQueries.csproj", "{78B6D102-D49D-4857-B8DD-3E16DD8015AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,18 @@ Global
 		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78B6D102-D49D-4857-B8DD-3E16DD8015AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78B6D102-D49D-4857-B8DD-3E16DD8015AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78B6D102-D49D-4857-B8DD-3E16DD8015AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78B6D102-D49D-4857-B8DD-3E16DD8015AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,9 @@
 ﻿
-namespace WorkoutTracker.Contracts.Actions.WorkoutTemplateActions
+namespace WorkoutTracker.Dispatchers.Actions.WorkoutTemplateActions
 {
     public class AddWorkoutTemplateAction
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
