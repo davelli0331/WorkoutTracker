@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Persistence", "WorkoutTracker.Persistence\WorkoutTracker.Persistence.csproj", "{7B38C277-9DA9-4E66-95AD-2C3EAAD91F25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{B37DCE2C-64C8-405F-927F-739FF77F81ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Core.Api", "WorkoutTracker.Core.Api\WorkoutTracker.Core.Api.csproj", "{EDEF2A61-9CAE-4E39-A62D-6E823854F87F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B37DCE2C-64C8-405F-927F-739FF77F81ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEF2A61-9CAE-4E39-A62D-6E823854F87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEF2A61-9CAE-4E39-A62D-6E823854F87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEF2A61-9CAE-4E39-A62D-6E823854F87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEF2A61-9CAE-4E39-A62D-6E823854F87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

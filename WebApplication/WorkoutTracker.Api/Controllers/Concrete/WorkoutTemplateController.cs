@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using WorkoutTracker.Api.ViewModels.WorkoutTemplate;
-using WorkoutTracker.Dispatchers.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Dispatchers.CommandDispatchers;
-using WorkoutTracker.Dispatchers.CommandDispatchers.Abstract;
+using WorkoutTracker.Core.Api;
 using WorkoutTracker.Models;
 
 namespace WorkoutTracker.Api.Controllers
 {
     public class WorkoutTemplateController : ApiController
     {
-        private readonly IWorkoutTemplateCommandDispatcher _commandDispatcher;
-        public WorkoutTemplateController(IWorkoutTemplateCommandDispatcher commandDispatcher)
+        private readonly IWorkoutTemplateCommandFactory _commandFactory;
+
+        public WorkoutTemplateController(IWorkoutTemplateCommandFactory commandFactory)
         {
-            _commandDispatcher = commandDispatcher;
+            _commandFactory = commandFactory;
         }
 
         public IHttpActionResult Get()
@@ -40,8 +39,6 @@ namespace WorkoutTracker.Api.Controllers
 
         public IHttpActionResult Post(Add viewModel)
         {
-            _commandDispatcher.Dispatch(new AddWorkoutTemplateAction());
-
             return Ok();
         }
     }

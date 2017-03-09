@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Models;
 
 namespace WorkoutTracker.Api.Controllers
 {
-    public class ExerciseController : ApiController
+    public class ExerciseController : BaseController
     {
         public IHttpActionResult Get()
         {

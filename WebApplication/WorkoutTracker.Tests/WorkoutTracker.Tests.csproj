@@ -68,8 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandDispatcherTests\WorkoutTemplateDispatcherTests.cs" />
-    <Compile Include="CommandTests\WorkoutTemplateCommandTests\AddWorkoutTemplateCommandTests.cs" />
+    <Compile Include="CommandTests\AddWorkoutTemplateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +78,10 @@
     <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj">
       <Project>{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}</Project>
       <Name>WorkoutTracker.Core.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkoutTracker.Core.Api\WorkoutTracker.Core.Api.csproj">
+      <Project>{edef2a61-9cae-4e39-a62d-6e823854f87f}</Project>
+      <Name>WorkoutTracker.Core.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\WorkoutTracker.Models\WorkoutTracker.Models.csproj">
       <Project>{318e149a-2ba8-4b41-9348-4a4e1faebc23}</Project>

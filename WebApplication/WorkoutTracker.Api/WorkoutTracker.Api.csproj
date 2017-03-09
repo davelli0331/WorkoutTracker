@@ -122,8 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ExerciseController.cs" />
-    <Compile Include="Controllers\WorkoutTemplateController.cs" />
+    <Compile Include="Controllers\Abstract\BaseController.cs" />
+    <Compile Include="Controllers\Concrete\ExerciseController.cs" />
+    <Compile Include="Controllers\Concrete\WorkoutTemplateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,6 +148,10 @@
     <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj">
       <Project>{b79d88fb-3ad9-49e9-9e46-f2bcc448460d}</Project>
       <Name>WorkoutTracker.Core.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkoutTracker.Core.Api\WorkoutTracker.Core.Api.csproj">
+      <Project>{edef2a61-9cae-4e39-a62d-6e823854f87f}</Project>
+      <Name>WorkoutTracker.Core.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\WorkoutTracker.Models\WorkoutTracker.Models.csproj">
       <Project>{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}</Project>
