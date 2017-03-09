@@ -149,10 +149,6 @@
       <Project>{b79d88fb-3ad9-49e9-9e46-f2bcc448460d}</Project>
       <Name>WorkoutTracker.Core.Implementation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WorkoutTracker.Core.Api\WorkoutTracker.Core.Api.csproj">
-      <Project>{edef2a61-9cae-4e39-a62d-6e823854f87f}</Project>
-      <Name>WorkoutTracker.Core.Api</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WorkoutTracker.Models\WorkoutTracker.Models.csproj">
       <Project>{318E149A-2BA8-4B41-9348-4A4E1FAEBC23}</Project>
       <Name>WorkoutTracker.Models</Name>
