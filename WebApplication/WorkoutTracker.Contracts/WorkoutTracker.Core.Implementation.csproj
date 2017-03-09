@@ -45,8 +45,8 @@
     <Compile Include="CommandDispatchers\Abstract\IWorkoutTemplateCommandDispatcher.cs" />
     <Compile Include="CommandDispatchers\Concrete\WorkoutTemplateCommandDispatcher.cs" />
     <Compile Include="CommandDispatchers\Utility\DispatchResult.cs" />
-    <Compile Include="Commands\Abstract\ICommand.cs" />
-    <Compile Include="Commands\Concrete\WorkoutTemplateCommands\AddWorkoutTemplateCommand.cs" />
+    <Compile Include="ActionHandlers\Abstract\IActionHandler.cs" />
+    <Compile Include="ActionHandlers\Concrete\WorkoutTemplateCommands\AddWorkoutTemplateActionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace WorkoutTracker.Core.Implementation.Commands.Abstract
+﻿namespace WorkoutTracker.Core.Implementation.ActionHandlers.Abstract
 {
     public interface IActionHandler<TAction>
     {

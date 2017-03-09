@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Moq;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.Commands.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Models;
 using WorkoutTracker.Persistence.DbContexts;
 using Xunit;

@@ -1,7 +1,7 @@
 ﻿using Moq;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
-using WorkoutTracker.Core.Implementation.Commands.Abstract;
 using Xunit;
 
 namespace WorkoutTracker.Tests.CommandDispatcherTests

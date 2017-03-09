@@ -1,10 +1,10 @@
 ﻿using System.Linq;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.Commands.Abstract;
 using WorkoutTracker.Models;
 using WorkoutTracker.Persistence.DbContexts;
 
-namespace WorkoutTracker.Core.Implementation.Commands.Concrete.WorkoutTemplateCommands
+namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands
 {
     public class AddWorkoutTemplateActionHandler : IActionHandler<AddWorkoutTemplateAction>
     {
