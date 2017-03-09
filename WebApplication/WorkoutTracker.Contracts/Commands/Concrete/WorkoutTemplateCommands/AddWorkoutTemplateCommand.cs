@@ -1,23 +1,36 @@
-﻿using WorkoutTracker.Core.Implementation.Commands.Abstract;
+﻿using System.Linq;
+using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Core.Implementation.Commands.Abstract;
 using WorkoutTracker.Models;
 using WorkoutTracker.Persistence.DbContexts;
 
-namespace WorkoutTracker.CommandsAndQueries.Commands.Concrete.WorkoutTemplateCommands
+namespace WorkoutTracker.Core.Implementation.Commands.Concrete.WorkoutTemplateCommands
 {
-    public class AddWorkoutTemplateCommand : ICommand
+    public class AddWorkoutTemplateActionHandler : IActionHandler<AddWorkoutTemplateAction>
     {
         private readonly ICommandDbContext _dbContext;
-        private readonly WorkoutTemplate _workoutTemplate;
 
-        public AddWorkoutTemplateCommand(ICommandDbContext dbContext, WorkoutTemplate workoutTemplate)
+        public AddWorkoutTemplateActionHandler(ICommandDbContext dbContext)
         {
             _dbContext = dbContext;
-            _workoutTemplate = workoutTemplate;
         }
 
-        public void Execute()
+        public void Handle(AddWorkoutTemplateAction command)
         {
-            _dbContext.Create(_workoutTemplate);
+            var workoutTemplate = new WorkoutTemplate
+            {
+                TemplateName =  command.Name,
+                TemplateDescription = command.Description,
+                Exercises = command
+                    .ExerciseIds
+                    .Select(e => new Exercise
+                    {
+                        ExerciseId = e
+                    })
+                    .ToList()
+            };
+
+            _dbContext.Create(workoutTemplate);
             _dbContext.SaveChanges();
         }
     }

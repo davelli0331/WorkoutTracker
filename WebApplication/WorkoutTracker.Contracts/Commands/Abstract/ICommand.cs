@@ -1,7 +1,7 @@
 ﻿namespace WorkoutTracker.Core.Implementation.Commands.Abstract
 {
-    public interface ICommand
+    public interface IActionHandler<TAction>
     {
-        void Execute();
+        void Handle(TAction action);
     }
 }
