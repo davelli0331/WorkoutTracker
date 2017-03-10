@@ -10,6 +10,8 @@ namespace WorkoutTracker.Api.Controllers.Concrete
     public class WorkoutTemplateController : BaseController
     {
         private readonly IWorkoutTemplateCommandDispatcher _commandDispatcher;
+
+        public WorkoutTemplateController() { }
         public WorkoutTemplateController(IWorkoutTemplateCommandDispatcher commandDispatcher)
         {
             _commandDispatcher = commandDispatcher;

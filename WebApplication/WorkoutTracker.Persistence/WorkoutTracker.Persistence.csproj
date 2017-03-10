@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbContexts\ICommandDbContext.cs" />
+    <Compile Include="DbContexts\Abstract\ICommandDbContext.cs" />
+    <Compile Include="DbContexts\Concrete\CommandDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

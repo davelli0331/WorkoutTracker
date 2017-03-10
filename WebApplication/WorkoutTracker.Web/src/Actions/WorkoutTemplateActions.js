@@ -6,8 +6,9 @@ const Actions = {
     addWorkoutTemplate({ name, exercises }) {
         Api
             .post('http://localhost/WorkoutTracker.Api/api/WorkoutTemplate', {
-                WorkoutTemplateName: name,
-                Exercises: exercises
+                Name: name,
+                Description: '',
+                ExerciseIds: exercises
             },
             () => {
                 WorkoutDispatcher.dispatch({
