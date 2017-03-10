@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using WorkoutTracker.Api.Controllers.Abstract;
-using WorkoutTracker.Models;
+using WorkoutTracker.Core.Implementation.Domain;
 
-namespace WorkoutTracker.Api.Controllers
+namespace WorkoutTracker.Api.Controllers.Concrete
 {
     public class ExerciseController : BaseController
     {

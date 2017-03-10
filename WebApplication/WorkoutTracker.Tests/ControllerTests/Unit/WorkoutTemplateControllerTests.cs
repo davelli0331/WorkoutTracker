@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
@@ -9,7 +11,9 @@ using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Utility;
 using Xunit;
 
-namespace WorkoutTracker.Tests.ControllerTests
+#endregion
+
+namespace WorkoutTracker.Tests.ControllerTests.Unit
 {
     public class WorkoutTemplateControllerTests
     {
@@ -30,7 +34,10 @@ namespace WorkoutTracker.Tests.ControllerTests
             {
                 Name = "Test1",
                 Description = "TestDescription",
-                ExerciseIds = new List<int> { 1 }
+                ExerciseIds = new List<int>
+                {
+                    1
+                }
             });
 
             Assert.IsType<OkResult>(response);
@@ -39,8 +46,8 @@ namespace WorkoutTracker.Tests.ControllerTests
                 .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription" &&
-                    a.ExerciseIds.Count(e => e ==1) == 1
-                )), Times.Once());
+                    a.ExerciseIds.Count(e => e == 1) == 1
+                    )), Times.Once());
         }
 
         [Fact]
@@ -59,18 +66,21 @@ namespace WorkoutTracker.Tests.ControllerTests
             {
                 Name = "Test1",
                 Description = "TestDescription",
-                ExerciseIds = new List<int> { 1 }
+                ExerciseIds = new List<int>
+                {
+                    1
+                }
             });
 
             Assert.IsType<ExceptionResult>(response);
-            Assert.True(((ExceptionResult)response).Exception.Message == "Test exception");
+            Assert.True(((ExceptionResult) response).Exception.Message == "Test exception");
 
             _mockDispatcher
                 .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription" &&
                     a.ExerciseIds.Count(e => e == 1) == 1
-                )), Times.Once());
+                    )), Times.Once());
         }
     }
 }

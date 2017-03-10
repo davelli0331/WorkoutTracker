@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿#region
+
+using System.Collections.Generic;
 using System.Linq;
 using Moq;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Models;
-using WorkoutTracker.Persistence.DbContexts;
+using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
+using WorkoutTracker.Core.Implementation.Domain;
 using Xunit;
+
+#endregion
 
 namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
 {

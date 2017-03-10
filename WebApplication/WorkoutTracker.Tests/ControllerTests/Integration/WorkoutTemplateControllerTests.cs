@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
+﻿using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
-using WorkoutTracker.Persistence.DbContexts.Concrete;
+using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
 using Xunit;
 
 namespace WorkoutTracker.Tests.ControllerTests.Integration
@@ -20,10 +15,14 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
             var actionHandler = new AddWorkoutTemplateActionHandler(dbContext);
             var dispatcher = new WorkoutTemplateCommandDispatcher(actionHandler);
 
-            //dispatcher.Dispatch(new AddWorkoutTemplateAction
-            //{
-            //    Name
-            //});
+            var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
+            {
+                Name = "Test",
+                Description = "Test Description"
+            });
+
+            Assert.True(result.Succeeded);
+            Assert.Null(result.CaughtException);
         }
     }
 }

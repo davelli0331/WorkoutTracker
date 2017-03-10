@@ -3,7 +3,7 @@ using System.Web.Http;
 using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
-using WorkoutTracker.Models;
+using WorkoutTracker.Core.Implementation.Domain;
 
 namespace WorkoutTracker.Api.Controllers.Concrete
 {

@@ -1,17 +1,16 @@
-﻿using Autofac;
-using Autofac.Integration.WebApi;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Web.Http;
-using WorkoutTracker.Api.Controllers.Concrete;
+using Autofac;
+using Autofac.Integration.WebApi;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
-using WorkoutTracker.Persistence.DbContexts;
-using WorkoutTracker.Persistence.DbContexts.Concrete;
+using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
+using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
 
-namespace WorkoutTracker.Api.App_Start
+namespace WorkoutTracker.Api
 {
     public static class AutoFacConfig
     {

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using AutoMapper;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Utility;
 
-namespace WorkoutTracker.Api.App_Start
+namespace WorkoutTracker.Api
 {
     public static class AutoMapperConfig
     {

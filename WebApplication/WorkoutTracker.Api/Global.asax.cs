@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-using WorkoutTracker.Api.App_Start;
 
 namespace WorkoutTracker.Api
 {

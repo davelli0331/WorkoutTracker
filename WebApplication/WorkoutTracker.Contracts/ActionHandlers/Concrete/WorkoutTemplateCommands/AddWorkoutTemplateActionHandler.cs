@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Models;
-using WorkoutTracker.Persistence.DbContexts;
+using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
+using WorkoutTracker.Core.Implementation.Domain;
 
 namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands
 {
