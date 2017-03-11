@@ -6,6 +6,6 @@ namespace WorkoutTracker.Core.Implementation.Domain
     {
         public string TemplateName { get; set; }
         public string TemplateDescription { get; set; }
-        public List<Exercise> Exercises { get; set; }
+        public IList<WorkoutTemplateExercise> WorkoutTemplateExercises { get; set; }
     }
 }

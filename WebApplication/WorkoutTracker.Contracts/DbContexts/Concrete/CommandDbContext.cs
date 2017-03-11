@@ -20,6 +20,8 @@ namespace WorkoutTracker.Core.Implementation.DbContexts.Concrete
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new WorkoutTemplateConfiguration());
+            modelBuilder.Configurations.Add(new WorkoutTemplateExerciseConfiguration());
+            modelBuilder.Configurations.Add(new ExerciseConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

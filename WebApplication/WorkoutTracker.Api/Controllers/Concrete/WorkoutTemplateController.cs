@@ -25,14 +25,12 @@ namespace WorkoutTracker.Api.Controllers.Concrete
                 {
                     TemplateName = "Push Day",
                     TemplateDescription = "Only push exercises",
-                    Exercises = new List<Exercise>
+                    WorkoutTemplateExercises = new List<WorkoutTemplateExercise>
                     {
-                        new Exercise
+                        new WorkoutTemplateExercise
                         {
                             ExerciseId = 1,
-                            ExerciseName = "Bench Press",
-                            PushPullIndicator = "Push",
-                            Instruction = "Do a bench press"
+                            TemplateName = "Push Day"
                         }
                     }
                 }

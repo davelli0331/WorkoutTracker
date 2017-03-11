@@ -52,9 +52,12 @@
     <Compile Include="ActionHandlers\Concrete\WorkoutTemplateCommands\AddWorkoutTemplateActionHandler.cs" />
     <Compile Include="DbContexts\Abstract\ICommandDbContext.cs" />
     <Compile Include="DbContexts\Concrete\CommandDbContext.cs" />
+    <Compile Include="DbContexts\EntityConfigurations\ExerciseConfiguration.cs" />
     <Compile Include="DbContexts\EntityConfigurations\WorkoutTemplateConfiguration.cs" />
+    <Compile Include="DbContexts\EntityConfigurations\WorkoutTemplateExerciseConfiguration.cs" />
     <Compile Include="Domain\Exercise.cs" />
     <Compile Include="Domain\WorkoutTemplate.cs" />
+    <Compile Include="Domain\WorkoutTemplateExercise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

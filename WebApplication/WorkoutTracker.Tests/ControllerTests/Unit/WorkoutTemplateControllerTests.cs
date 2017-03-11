@@ -33,11 +33,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
             var response = controller.Post(new AddWorkoutTemplateAction
             {
                 Name = "Test1",
-                Description = "TestDescription",
-                ExerciseIds = new List<int>
-                {
-                    1
-                }
+                Description = "TestDescription"
             });
 
             Assert.IsType<OkResult>(response);
@@ -45,8 +41,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
             _mockDispatcher
                 .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
                     a.Name == "Test1" &&
-                    a.Description == "TestDescription" &&
-                    a.ExerciseIds.Count(e => e == 1) == 1
+                    a.Description == "TestDescription"
                     )), Times.Once());
         }
 
@@ -65,11 +60,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
             var response = controller.Post(new AddWorkoutTemplateAction
             {
                 Name = "Test1",
-                Description = "TestDescription",
-                ExerciseIds = new List<int>
-                {
-                    1
-                }
+                Description = "TestDescription"
             });
 
             Assert.IsType<ExceptionResult>(response);
@@ -78,8 +69,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
             _mockDispatcher
                 .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
                     a.Name == "Test1" &&
-                    a.Description == "TestDescription" &&
-                    a.ExerciseIds.Count(e => e == 1) == 1
+                    a.Description == "TestDescription"
                     )), Times.Once());
         }
     }

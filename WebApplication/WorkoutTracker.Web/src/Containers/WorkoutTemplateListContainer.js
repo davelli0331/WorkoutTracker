@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'flux/utils';
 import WorkoutTemplateStore from '../Stores/WorkoutTemplateStore';
 import Immutable from 'immutable';
-import Actions from '../Actions/WorkoutTemplateActions';
+import Actions from '../Actions/WorkoutTemplate/WorkoutTemplateActions';
 import ListView from '../Views/WorkoutTemplate/List';
 
 let removeToken;

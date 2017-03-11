@@ -20,14 +20,7 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemp
             var workoutTemplate = new WorkoutTemplate
             {
                 TemplateName =  command.Name,
-                TemplateDescription = command.Description,
-                Exercises = command
-                    .ExerciseIds
-                    .Select(e => new Exercise
-                    {
-                        ExerciseId = e
-                    })
-                    .ToList()
+                TemplateDescription = command.Description
             };
 
             _dbContext.Create(workoutTemplate);

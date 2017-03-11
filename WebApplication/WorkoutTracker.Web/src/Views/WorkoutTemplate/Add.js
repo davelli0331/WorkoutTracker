@@ -1,7 +1,6 @@
 import React from 'react';
-import ExerciseList from '../../Containers/ExerciseListContainer';
 import Immutable from 'immutable';
-import Actions from '../../Actions/WorkoutTemplateActions';
+import Actions from '../../Actions/WorkoutTemplate/WorkoutTemplateActions';
 
 class WorkoutTemplateAdd extends React.Component {
     constructor(props) {
@@ -9,7 +8,7 @@ class WorkoutTemplateAdd extends React.Component {
 
         this.state = {
             name: '',
-            exercises: Immutable.List()
+            description: ''
         };
     }
 
@@ -19,26 +18,32 @@ class WorkoutTemplateAdd extends React.Component {
         });
     }
 
-    onExerciseclicked(exerciseId, isAdd) {
-        let exercises;
-        if (isAdd) {
-            exercises = this.state.exercises.insert(0, exerciseId);
-        } else {
-            let foundIndex = this.state.exercises.indexOf(exerciseId);
-            if (foundIndex > -1) {
-                exercises = this.state.exercises.delete(foundIndex);
-            }
-        }
-
+    onDescriptionChanged(e) {
         this.setState({
-            exercises: exercises
+            description: e.target.value
         });
     }
+
+    // onExerciseclicked(exerciseId, isAdd) {
+    //     let exercises;
+    //     if (isAdd) {
+    //         exercises = this.state.exercises.insert(0, exerciseId);
+    //     } else {
+    //         let foundIndex = this.state.exercises.indexOf(exerciseId);
+    //         if (foundIndex > -1) {
+    //             exercises = this.state.exercises.delete(foundIndex);
+    //         }
+    //     }
+
+    //     this.setState({
+    //         exercises: exercises
+    //     });
+    // }
 
     onClickSubmit() {
         Actions.addWorkoutTemplate({
             name: this.state.name,
-            exercises: this.state.exercises.toJS()
+            description: this.state.description
         });
 
         this.props.OnWorkoutTemplateAdded();
@@ -47,14 +52,17 @@ class WorkoutTemplateAdd extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    Name
-                    <input type="text" onChange={this.onNameChanged.bind(this)} />
-                </div>
-                <ExerciseList onExerciseclicked={this.onExerciseclicked.bind(this)} />
-                <div>
-                    <button onClick={this.onClickSubmit.bind(this)}>Finish</button>
-                </div>
+                <fieldset>
+                    <ul>
+                        <li>
+                            <label>Name <input type="text" onChange={this.onNameChanged.bind(this)} /></label>
+                        </li>
+                        <li>
+                            <label>Description <textarea onChange={this.onDescriptionChanged.bind(this)}></textarea></label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <button onClick={this.onClickSubmit.bind(this)}>Finish</button>
             </div>
         );
     }

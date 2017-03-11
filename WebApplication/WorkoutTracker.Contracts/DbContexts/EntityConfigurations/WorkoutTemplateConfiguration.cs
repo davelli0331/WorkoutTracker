@@ -18,6 +18,9 @@ namespace WorkoutTracker.Core.Implementation.DbContexts.EntityConfigurations
             Property(w => w.TemplateDescription)
                 .IsRequired()
                 .HasMaxLength(300);
+
+            HasMany(w => w.WorkoutTemplateExercises)
+                .WithRequired(wte => wte.WorkoutTemplate);
         }
     }
 }

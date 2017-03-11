@@ -1,20 +1,18 @@
-import WorkoutDispatcher from '../Dispatcher/WorkoutDispatcher';
+import WorkoutDispatcher from '../../Dispatcher/WorkoutDispatcher';
 import WorkoutTemplateActionTypes from './WorkoutTemplateActionTypes';
-import Api from '../Api/Api';
+import Api from '../../Api/Api';
 
 const Actions = {
-    addWorkoutTemplate({ name, exercises }) {
+    addWorkoutTemplate({ name, description }) {
         Api
             .post('http://localhost/WorkoutTracker.Api/api/WorkoutTemplate', {
                 Name: name,
-                Description: '',
-                ExerciseIds: exercises
+                Description: description
             },
             () => {
                 WorkoutDispatcher.dispatch({
                     type: WorkoutTemplateActionTypes.ADD_WORKOUT_TEMPLATE,
-                    name,
-                    exercises
+                    name
                 });
             });
     },

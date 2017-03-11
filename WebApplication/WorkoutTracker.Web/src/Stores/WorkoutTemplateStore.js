@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import { ReduceStore } from 'flux/utils';
-import WorkoutTemplateTypes from '../Actions/WorkoutTemplateActionTypes';
+import WorkoutTemplateTypes from '../Actions/WorkoutTemplate/WorkoutTemplateActionTypes';
 import WorkoutDispatcher from '../Dispatcher/WorkoutDispatcher';
 import WorkoutTemplate from '../Data/WorkoutTemplate';
 import Exercise from '../Data/Exercise';
@@ -25,15 +25,7 @@ class WorkoutTemplateStore extends ReduceStore {
                 let asRecords = action.workoutTemplates.map((w, i) => {
                     return new WorkoutTemplate({
                         name: w.TemplateName,
-                        description: w.TemplateDescription,
-                        exercises: w.Exercises.map((e, index) => {
-                            return new Exercise({
-                                id: e.ExerciseId,
-                                name: e.ExerciseName,
-                                pushPull: e.PushPullIndicator,
-                                instruction: e.Instruction
-                            });
-                        })
+                        description: w.TemplateDescription
                     });
                 });
 

@@ -31,27 +31,5 @@ namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
                 w.TemplateName == "Test" &&
                 w.TemplateDescription == "Test Description")), Times.Once());
         }
-
-        [Fact]
-        public void AddWorkoutTemplateCommand_With_Exercises()
-        {
-            var command = new AddWorkoutTemplateActionHandler(_dbContext.Object);
-            command.Handle(new AddWorkoutTemplateAction
-            {
-                Name = "Test",
-                Description = "Test Description",
-                ExerciseIds = new List<int>
-                {
-                    1,
-                    2
-                }
-            });
-
-            _dbContext.Verify(db => db.Create(It.Is<WorkoutTemplate>(w =>
-                w.TemplateName == "Test" &&
-                w.TemplateDescription == "Test Description" &&
-                w.Exercises.Count(e => e.ExerciseId == 1) == 1 &&
-                w.Exercises.Count(e => e.ExerciseId == 2) == 1)), Times.Once());
-        }
     }
 }
