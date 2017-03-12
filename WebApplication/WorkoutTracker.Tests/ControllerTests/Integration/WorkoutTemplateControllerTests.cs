@@ -1,7 +1,14 @@
-﻿using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http.Results;
+using WorkoutTracker.Api.Controllers.Concrete;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
+using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.Implementation.QueryHandlers;
 using Xunit;
 
 namespace WorkoutTracker.Tests.ControllerTests.Integration
@@ -11,7 +18,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
         //[Fact]
         public void Post_Succeeds()
         {
-            var dbContext = new CommandDbContext();
+            var dbContext = new WorkoutDbContext();
             var actionHandler = new AddWorkoutTemplateActionHandler(dbContext);
             var dispatcher = new WorkoutTemplateCommandDispatcher(actionHandler);
 
@@ -23,6 +30,18 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
 
             Assert.True(result.Succeeded);
             Assert.Null(result.CaughtException);
+        }
+
+        //[Fact]
+        public void Get_Succeeds()
+        {
+            var dbContext = new WorkoutDbContext();
+            var handler = new WorkoutTemplateQueryHandler(dbContext);
+
+            var controller = new WorkoutTemplateController(null, handler);
+            var result = (OkNegotiatedContentResult<IEnumerable<WorkoutTemplate>>) controller.Get(name: "Test");
+
+            Assert.Equal(1, result.Content.Count());
         }
     }
 }

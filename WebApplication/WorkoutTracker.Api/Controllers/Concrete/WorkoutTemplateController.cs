@@ -4,37 +4,32 @@ using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.Implementation.Queries;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 
 namespace WorkoutTracker.Api.Controllers.Concrete
 {
     public class WorkoutTemplateController : BaseController
     {
         private readonly IWorkoutTemplateCommandDispatcher _commandDispatcher;
+        private readonly IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>> _queryHandler;
 
         public WorkoutTemplateController() { }
-        public WorkoutTemplateController(IWorkoutTemplateCommandDispatcher commandDispatcher)
+
+        public WorkoutTemplateController(
+            IWorkoutTemplateCommandDispatcher commandDispatcher,
+            IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>> queryHandler)
         {
             _commandDispatcher = commandDispatcher;
+            _queryHandler = queryHandler;
         }
 
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(string name = null, string description = null)
         {
-            return Ok(new List<WorkoutTemplate>
+            return Ok(_queryHandler.Handle(new WorkoutTemplateQuery
             {
-                new WorkoutTemplate
-                {
-                    TemplateName = "Push Day",
-                    TemplateDescription = "Only push exercises",
-                    WorkoutTemplateExercises = new List<WorkoutTemplateExercise>
-                    {
-                        new WorkoutTemplateExercise
-                        {
-                            ExerciseId = 1,
-                            TemplateName = "Push Day"
-                        }
-                    }
-                }
-            });
+                WorkoutTemplateName = name
+            }));
         }
 
         public IHttpActionResult Post(AddWorkoutTemplateAction action)

@@ -29,7 +29,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
                     Succeeded = true
                 });
 
-            var controller = new WorkoutTemplateController(_mockDispatcher.Object);
+            var controller = new WorkoutTemplateController(_mockDispatcher.Object, null);
             var response = controller.Post(new AddWorkoutTemplateAction
             {
                 Name = "Test1",
@@ -56,7 +56,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
                     CaughtException = new Exception("Test exception")
                 });
 
-            var controller = new WorkoutTemplateController(_mockDispatcher.Object);
+            var controller = new WorkoutTemplateController(_mockDispatcher.Object, null);
             var response = controller.Post(new AddWorkoutTemplateAction
             {
                 Name = "Test1",

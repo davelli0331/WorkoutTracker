@@ -71,12 +71,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WorkoutTracker.Core.Api\WorkoutTracker.Core.Api.csproj">
-      <Project>{edef2a61-9cae-4e39-a62d-6e823854f87f}</Project>
-      <Name>WorkoutTracker.Core.Api</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

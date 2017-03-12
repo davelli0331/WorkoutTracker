@@ -9,6 +9,11 @@ using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
+using WorkoutTracker.Core.Implementation.QueryHandlers;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
+using System.Collections.Generic;
+using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.Implementation.Queries;
 
 namespace WorkoutTracker.Api
 {
@@ -19,14 +24,21 @@ namespace WorkoutTracker.Api
             var builder = new ContainerBuilder();
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterType<CommandDbContext>().As<ICommandDbContext>().InstancePerRequest();
-            builder.RegisterType<AddWorkoutTemplateActionHandler>().As<IActionHandler<AddWorkoutTemplateAction>>().InstancePerRequest();
-            builder.RegisterType<WorkoutTemplateCommandDispatcher>().As<IWorkoutTemplateCommandDispatcher>().InstancePerRequest();
+            RegisterTypes(builder);
 
             var container = builder.Build();
 
             var config = GlobalConfiguration.Configuration;
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+        }
+
+        private static void RegisterTypes(ContainerBuilder builder)
+        {
+            builder.RegisterType<WorkoutDbContext>().As<ICommandDbContext>().InstancePerRequest();
+            builder.RegisterType<WorkoutDbContext>().As<IQueryDbContext>().InstancePerRequest();
+            builder.RegisterType<AddWorkoutTemplateActionHandler>().As<IActionHandler<AddWorkoutTemplateAction>>().InstancePerRequest();
+            builder.RegisterType<WorkoutTemplateCommandDispatcher>().As<IWorkoutTemplateCommandDispatcher>().InstancePerRequest();
+            builder.RegisterType<WorkoutTemplateQueryHandler>().As<IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>>().InstancePerRequest();
         }
     }
 }

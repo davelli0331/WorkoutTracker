@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.DbContexts.EntityConfigurations;
 
 namespace WorkoutTracker.Core.Implementation.DbContexts.Concrete
 {
-    public class CommandDbContext : DbContext, ICommandDbContext, IQueryDbContext
+    public class WorkoutDbContext : DbContext, ICommandDbContext, IQueryDbContext
     {
-        public CommandDbContext()
+        public WorkoutDbContext()
             : base("WorkoutTrackerdb")
         {
         }
@@ -21,8 +20,7 @@ namespace WorkoutTracker.Core.Implementation.DbContexts.Concrete
 
         public IEnumerable<TEntity> Query<TEntity>() where TEntity : class
         {
-            return Query<TEntity>()
-                .ToList();
+            return Set<TEntity>();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

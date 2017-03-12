@@ -19,7 +19,7 @@ namespace WorkoutTracker.Core.Implementation.QueryHandlers
         public IEnumerable<WorkoutTemplate> Handle(WorkoutTemplateQuery query)
         {
             return _dbContext.Query<WorkoutTemplate>()
-                .Where(wt => wt.TemplateName == query.WorkoutTemplateName)
+                .Where(wt => string.IsNullOrEmpty(query.WorkoutTemplateName) || wt.TemplateName == query.WorkoutTemplateName)
                 .ToList();
         }
     }

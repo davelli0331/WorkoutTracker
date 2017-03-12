@@ -6,6 +6,6 @@ namespace WorkoutTracker.Core.Implementation.Queries
 {
     public class WorkoutTemplateQuery : IQuery<IEnumerable<WorkoutTemplate>>
     {
-        public string WorkoutTemplateName { get; internal set; }
+        public string WorkoutTemplateName { get; set; }
     }
 }
