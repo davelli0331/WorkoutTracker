@@ -1,0 +1,11 @@
+﻿using System.Collections.Generic;
+using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.Implementation.Queries.Abstract;
+
+namespace WorkoutTracker.Core.Implementation.Queries
+{
+    public class WorkoutTemplateQuery : IQuery<IEnumerable<WorkoutTemplate>>
+    {
+        public string WorkoutTemplateName { get; internal set; }
+    }
+}

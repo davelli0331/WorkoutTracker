@@ -95,6 +95,9 @@
     <Compile Include="ControllerTests\Integration\WorkoutTemplateControllerTests.cs" />
     <Compile Include="ControllerTests\Unit\WorkoutTemplateControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryDispatcherTests\WorkoutTemplateQueryDispatcherTests.cs" />
+    <Compile Include="QueryHandlerTests\WorkoutTemplateHandlerTests.cs" />
+    <Compile Include="Stubs\StubQueryDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -105,9 +108,9 @@
       <Project>{e08a8297-f691-4951-9b05-13f2341efbc6}</Project>
       <Name>WorkoutTracker.Api</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj">
+    <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.csproj">
       <Project>{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}</Project>
-      <Name>WorkoutTracker.Core.Implementation</Name>
+      <Name>WorkoutTracker.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

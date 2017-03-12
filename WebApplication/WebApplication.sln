@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Api", "WorkoutTracker.Api\WorkoutTracker.Api.csproj", "{E08A8297-F691-4951-9B05-13F2341EFBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Core.Implementation", "WorkoutTracker.Contracts\WorkoutTracker.Core.Implementation.csproj", "{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Core", "WorkoutTracker.Contracts\WorkoutTracker.Core.csproj", "{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests", "WorkoutTracker.Tests\WorkoutTracker.Tests.csproj", "{B37DCE2C-64C8-405F-927F-739FF77F81ED}"
 EndProject
