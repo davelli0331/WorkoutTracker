@@ -61,10 +61,12 @@
     <Compile Include="Domain\WorkoutTemplateExercise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\Abstract\IQuery.cs" />
+    <Compile Include="Queries\Concrete\ExerciseQuery.cs" />
     <Compile Include="Queries\Concrete\WorkoutTemplateQuery.cs" />
     <Compile Include="QueryDispatcher\Abstract\IQueryDispatcher.cs" />
     <Compile Include="QueryDispatcher\Concrete\QueryDispatcher.cs" />
     <Compile Include="QueryHandlers\Abstract\IQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Concrete\ExerciseQueryHandler.cs" />
     <Compile Include="QueryHandlers\Concrete\WorkoutTemplateQueryHandler.cs" />
   </ItemGroup>
   <ItemGroup>

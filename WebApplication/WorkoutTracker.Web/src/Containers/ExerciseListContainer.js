@@ -1,6 +1,6 @@
 import { Container } from 'flux/utils'
 import React from 'react';
-import ExerciseChooser from '../Views/Exercise/ExerciseChooser';
+import ExerciseList from '../Views/Exercise/List';
 import ExerciseActions from '../Actions/ExerciseActions/ExerciseActions';
 import ExerciseStore from '../Stores/ExerciseStore';
 
@@ -34,7 +34,7 @@ class ExerciseContainer extends React.Component {
     }
 
     render() {
-        return (<ExerciseChooser 
+        return (<ExerciseList 
                     exercises={this.state.exercises} 
                     exerciseClicked={this.props.onExerciseclicked} />);
     }

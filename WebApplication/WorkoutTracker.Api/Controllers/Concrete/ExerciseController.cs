@@ -2,30 +2,25 @@
 using System.Web.Http;
 using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.Implementation.Queries.Concrete;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 
 namespace WorkoutTracker.Api.Controllers.Concrete
 {
     public class ExerciseController : BaseController
     {
+        private IQueryHandler<ExerciseQuery, IEnumerable<Exercise>> _queryHandler;
+
+        public ExerciseController() { }
+
+        public ExerciseController(IQueryHandler<ExerciseQuery, IEnumerable<Exercise>> queryHandler)
+        {
+            _queryHandler = queryHandler;
+        }
+
         public IHttpActionResult Get()
         {
-            return Ok(new List<Exercise>
-            {
-                new Exercise
-                {
-                    ExerciseName = "Bench Press",
-                    ExerciseId = 1 ,
-                    Instruction = "Do a bench press",
-                    PushPullIndicator = "Push"
-                },
-                new Exercise
-                {
-                    ExerciseName = "Triceps Pullover",
-                    ExerciseId = 2,
-                    Instruction = "Do a triceps pullover",
-                    PushPullIndicator = "Pull"
-                }
-            });
+            return Ok(_queryHandler.Handle(new ExerciseQuery()));
         }
     }
 }
