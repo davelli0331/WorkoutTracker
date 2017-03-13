@@ -1,7 +1,7 @@
 ﻿using Moq;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
 using Xunit;
 
 namespace WorkoutTracker.Tests.CommandDispatcherTests
@@ -13,7 +13,7 @@ namespace WorkoutTracker.Tests.CommandDispatcherTests
         [Fact]
         public void WorkoutTemplateDispatcher_Dispatch_Add_Workout_Template_Succeeds()
         {
-            var dispatcher = new WorkoutTemplateCommandDispatcher(_addHandler.Object);
+            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object);
             var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
             {
                 Name = "Test",

@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Utility;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
 
 namespace WorkoutTracker.Api.Controllers.Abstract
 {

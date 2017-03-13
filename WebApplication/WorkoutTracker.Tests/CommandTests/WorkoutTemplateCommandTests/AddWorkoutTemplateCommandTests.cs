@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Moq;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.Domain;

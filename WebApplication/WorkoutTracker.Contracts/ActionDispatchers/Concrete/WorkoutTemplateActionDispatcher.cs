@@ -1,15 +1,15 @@
 ﻿using System;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Utility;
 
-namespace WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete
+namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
 {
-    public class WorkoutTemplateCommandDispatcher : IWorkoutTemplateCommandDispatcher
+    public class WorkoutTemplateActionDispatcher : IWorkoutTemplateActionDispatcher
     {
         private readonly IActionHandler<AddWorkoutTemplateAction> _addHandler;
-        public WorkoutTemplateCommandDispatcher(IActionHandler<AddWorkoutTemplateAction> addHandler)
+        public WorkoutTemplateActionDispatcher(IActionHandler<AddWorkoutTemplateAction> addHandler)
         {
             _addHandler = addHandler;
         }

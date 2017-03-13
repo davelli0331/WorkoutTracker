@@ -6,9 +6,9 @@ using System.Linq;
 using System.Web.Http.Results;
 using Moq;
 using WorkoutTracker.Api.Controllers.Concrete;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Utility;
 using Xunit;
 
 #endregion
@@ -17,7 +17,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
 {
     public class WorkoutTemplateControllerTests
     {
-        private readonly Mock<IWorkoutTemplateCommandDispatcher> _mockDispatcher = new Mock<IWorkoutTemplateCommandDispatcher>();
+        private readonly Mock<IWorkoutTemplateActionDispatcher> _mockDispatcher = new Mock<IWorkoutTemplateActionDispatcher>();
 
         [Fact]
         public void Post_Succeeds()

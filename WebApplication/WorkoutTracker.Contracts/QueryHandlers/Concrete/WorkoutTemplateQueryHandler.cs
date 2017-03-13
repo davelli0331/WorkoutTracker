@@ -2,10 +2,10 @@
 using System.Linq;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries;
+using WorkoutTracker.Core.Implementation.Queries.Concrete;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.QueryHandlers
+namespace WorkoutTracker.Core.Implementation.QueryHandlers.Concrete
 {
     public class WorkoutTemplateQueryHandler 
         : IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>

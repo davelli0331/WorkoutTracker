@@ -45,11 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\WorkoutTemplateActions\AddWorkoutTemplateAction.cs" />
-    <Compile Include="CommandDispatchers\Abstract\IWorkoutTemplateCommandDispatcher.cs" />
-    <Compile Include="CommandDispatchers\Concrete\WorkoutTemplateCommandDispatcher.cs" />
-    <Compile Include="CommandDispatchers\Utility\DispatchResult.cs" />
+    <Compile Include="ActionDispatchers\Abstract\IWorkoutTemplateActionDispatcher.cs" />
+    <Compile Include="ActionDispatchers\Concrete\WorkoutTemplateActionDispatcher.cs" />
+    <Compile Include="ActionDispatchers\Utility\DispatchResult.cs" />
     <Compile Include="ActionHandlers\Abstract\IActionHandler.cs" />
-    <Compile Include="ActionHandlers\Concrete\WorkoutTemplateCommands\AddWorkoutTemplateActionHandler.cs" />
+    <Compile Include="ActionHandlers\Concrete\WorkoutTemplateActionHandlers\AddWorkoutTemplateActionHandler.cs" />
     <Compile Include="DbContexts\Abstract\ICommandDbContext.cs" />
     <Compile Include="DbContexts\Abstract\IQueryDbContext.cs" />
     <Compile Include="DbContexts\Concrete\CommandDbContext.cs" />

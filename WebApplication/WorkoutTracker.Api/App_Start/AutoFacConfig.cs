@@ -3,15 +3,15 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
 using WorkoutTracker.Core.Implementation.QueryHandlers;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 using System.Collections.Generic;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
 using WorkoutTracker.Core.Implementation.Domain;
 using WorkoutTracker.Core.Implementation.Queries;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
@@ -39,7 +39,7 @@ namespace WorkoutTracker.Api
             builder.RegisterType<WorkoutDbContext>().As<ICommandDbContext>().InstancePerRequest();
             builder.RegisterType<WorkoutDbContext>().As<IQueryDbContext>().InstancePerRequest();
             builder.RegisterType<AddWorkoutTemplateActionHandler>().As<IActionHandler<AddWorkoutTemplateAction>>().InstancePerRequest();
-            builder.RegisterType<WorkoutTemplateCommandDispatcher>().As<IWorkoutTemplateCommandDispatcher>().InstancePerRequest();
+            builder.RegisterType<WorkoutTemplateActionDispatcher>().As<IWorkoutTemplateActionDispatcher>().InstancePerRequest();
             builder.RegisterType<WorkoutTemplateQueryHandler>().As<IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>>().InstancePerRequest();
             builder.RegisterType<ExerciseQueryHandler>().As<IQueryHandler<ExerciseQuery, IEnumerable<Exercise>>>().InstancePerRequest();
         }

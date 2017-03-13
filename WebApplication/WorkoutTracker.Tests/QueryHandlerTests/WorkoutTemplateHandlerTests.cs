@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using WorkoutTracker.Core.Implementation.Domain;
 using WorkoutTracker.Core.Implementation.Queries;
+using WorkoutTracker.Core.Implementation.Queries.Concrete;
 using WorkoutTracker.Core.Implementation.QueryHandlers;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
 using WorkoutTracker.Tests.Stubs;
 using Xunit;
 

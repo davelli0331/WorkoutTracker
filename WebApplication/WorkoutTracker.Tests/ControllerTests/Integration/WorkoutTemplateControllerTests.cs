@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
 using WorkoutTracker.Api.Controllers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateCommands;
+using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
+using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.CommandDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
 using WorkoutTracker.Core.Implementation.Domain;
 using WorkoutTracker.Core.Implementation.QueryHandlers;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
 using Xunit;
 
 namespace WorkoutTracker.Tests.ControllerTests.Integration
@@ -20,7 +21,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
         {
             var dbContext = new WorkoutDbContext();
             var actionHandler = new AddWorkoutTemplateActionHandler(dbContext);
-            var dispatcher = new WorkoutTemplateCommandDispatcher(actionHandler);
+            var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler);
 
             var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
             {
