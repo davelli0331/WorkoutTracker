@@ -1,14 +1,14 @@
 import React from 'react';
-import ExerciseChooser from './ExerciseChooser';
+import CheckboxItem from './CheckboxItem';
 
-const ExerciseList = ({ exercises, exerciseClicked }) => {
+const ExerciseList = ({ exercises, exerciseChanged }) => {
     return (
         <ul>
             {[...exercises.values()].map((exercise, index) => {
-                return (<ExerciseChooser 
+                return (<CheckboxItem 
                     key={exercise.id}
                     exercise={exercise}
-                    onExerciseClicked={exerciseClicked} />);
+                    onExerciseChanged={exerciseChanged} />);
             })}
         </ul> 
     );

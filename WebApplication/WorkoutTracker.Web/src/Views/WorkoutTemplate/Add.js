@@ -24,29 +24,13 @@ class WorkoutTemplateAdd extends React.Component {
         });
     }
 
-    // onExerciseclicked(exerciseId, isAdd) {
-    //     let exercises;
-    //     if (isAdd) {
-    //         exercises = this.state.exercises.insert(0, exerciseId);
-    //     } else {
-    //         let foundIndex = this.state.exercises.indexOf(exerciseId);
-    //         if (foundIndex > -1) {
-    //             exercises = this.state.exercises.delete(foundIndex);
-    //         }
-    //     }
-
-    //     this.setState({
-    //         exercises: exercises
-    //     });
-    // }
-
     onClickSubmit() {
         Actions.addWorkoutTemplate({
             name: this.state.name,
             description: this.state.description
         });
 
-        this.props.OnWorkoutTemplateAdded();
+        this.props.OnWorkoutTemplateAdded(this.state.name);
     }
 
     render() {

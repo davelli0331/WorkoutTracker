@@ -1,7 +1,7 @@
 import React from 'react';
 import Add from './Add';
-import ListContainer from '../../Containers/WorkoutTemplateListContainer';
-import ExerciseListContainer from '../../Containers/ExerciseListContainer';
+import WorkoutTemplateListContainer from '../../Containers/WorkoutTemplateListContainer';
+import ExerciseCheckboxListContainer from '../../Containers/Exercise/CheckboxListContainer';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -18,8 +18,9 @@ class WorkoutTemplateIndex extends React.Component {
         });
     }
 
-    onWorkoutTemplateAdded() {
+    onWorkoutTemplateAdded(workoutTemplateName) {
         this.setState({
+            addedWorkoutTemplateName: workoutTemplateName,
             mode: 'addExercises'
         });
     }
@@ -28,11 +29,11 @@ class WorkoutTemplateIndex extends React.Component {
         let shownComponent;
         switch (this.state.mode) {
             case 'list':
-                shownComponent = <ListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
+                shownComponent = <WorkoutTemplateListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
                 break;
 
             case 'addExercises':
-                shownComponent = <ExerciseListContainer />
+                shownComponent = <ExerciseCheckboxListContainer workoutTemplateName={this.state.addedWorkoutTemplateName} />
                 break;
 
             default:
