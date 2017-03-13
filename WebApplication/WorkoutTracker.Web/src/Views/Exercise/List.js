@@ -4,9 +4,14 @@ import ExerciseChooser from './ExerciseChooser';
 const ExerciseList = ({ exercises, exerciseClicked }) => {
     return (
         <ul>
-            {this.exercises.map((exercise, index) => {
-                return (<ExerciseChooser />);
+            {[...exercises.values()].map((exercise, index) => {
+                return (<ExerciseChooser 
+                    key={exercise.id}
+                    exercise={exercise}
+                    onExerciseClicked={exerciseClicked} />);
             })}
-        </ul>
+        </ul> 
     );
 };
+
+export default ExerciseList;

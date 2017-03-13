@@ -14,6 +14,8 @@ using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 using System.Collections.Generic;
 using WorkoutTracker.Core.Implementation.Domain;
 using WorkoutTracker.Core.Implementation.Queries;
+using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
+using WorkoutTracker.Core.Implementation.Queries.Concrete;
 
 namespace WorkoutTracker.Api
 {
@@ -39,6 +41,7 @@ namespace WorkoutTracker.Api
             builder.RegisterType<AddWorkoutTemplateActionHandler>().As<IActionHandler<AddWorkoutTemplateAction>>().InstancePerRequest();
             builder.RegisterType<WorkoutTemplateCommandDispatcher>().As<IWorkoutTemplateCommandDispatcher>().InstancePerRequest();
             builder.RegisterType<WorkoutTemplateQueryHandler>().As<IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>>().InstancePerRequest();
+            builder.RegisterType<ExerciseQueryHandler>().As<IQueryHandler<ExerciseQuery, IEnumerable<Exercise>>>().InstancePerRequest();
         }
     }
 }

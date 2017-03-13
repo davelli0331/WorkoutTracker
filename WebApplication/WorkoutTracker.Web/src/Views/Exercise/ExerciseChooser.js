@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ExerciseChooser = ({ exercise }) => {
+const ExerciseChooser = ({ exercise, onExerciseClicked }) => {
     return (
         <li>
-            <input type="check" onChange={} />{this.exercise.ExerciseName}
+            <input type="checkbox" />{exercise.name}
         </li>
     );
 };

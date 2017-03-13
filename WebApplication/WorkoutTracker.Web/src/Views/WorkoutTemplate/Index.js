@@ -1,6 +1,7 @@
 import React from 'react';
 import Add from './Add';
 import ListContainer from '../../Containers/WorkoutTemplateListContainer';
+import ExerciseListContainer from '../../Containers/ExerciseListContainer';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -19,23 +20,30 @@ class WorkoutTemplateIndex extends React.Component {
 
     onWorkoutTemplateAdded() {
         this.setState({
-            mode: 'list'
+            mode: 'addExercises'
         });
     }
 
     render() {
         let shownComponent;
+        switch (this.state.mode) {
+            case 'list':
+                shownComponent = <ListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
+                break;
 
-        if (this.state.mode === 'list') {
-            shownComponent = <ListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
-        } else {
-            shownComponent = <Add OnWorkoutTemplateAdded={this.onWorkoutTemplateAdded.bind(this)} />
+            case 'addExercises':
+                shownComponent = <ExerciseListContainer />
+                break;
+
+            default:
+                shownComponent = <Add OnWorkoutTemplateAdded={this.onWorkoutTemplateAdded.bind(this)} />
+                break;
         }
 
         return (
             <div>
                 <h3>Workout Templates</h3>
-                
+
                 {shownComponent}
             </div>
         );

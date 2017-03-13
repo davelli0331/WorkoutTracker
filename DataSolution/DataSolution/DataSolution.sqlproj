@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SQL2012.publish.xml" />
+    <None Include="SQL2016.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Seed Scripts\Seed Lookups.PostDeployment.sql" />
