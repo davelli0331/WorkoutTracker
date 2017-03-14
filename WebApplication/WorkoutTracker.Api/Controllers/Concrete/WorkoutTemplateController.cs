@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries;
 using WorkoutTracker.Core.Implementation.Queries.Concrete;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 

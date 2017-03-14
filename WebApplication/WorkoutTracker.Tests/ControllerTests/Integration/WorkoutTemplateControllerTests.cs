@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
 using WorkoutTracker.Api.Controllers.Concrete;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
+using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Concrete;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
 using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.QueryHandlers;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
 using Xunit;
 
@@ -20,8 +18,8 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
         public void Post_Succeeds()
         {
             var dbContext = new WorkoutDbContext();
-            var actionHandler = new AddWorkoutTemplateActionHandler(dbContext);
-            var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler, null);
+            var actionHandler = new ActionHandlerFactory(dbContext);
+            var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler);
 
             var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
             {

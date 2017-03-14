@@ -1,22 +1,18 @@
 ﻿using System;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
+using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 
 namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
 {
     public class WorkoutTemplateActionDispatcher : IWorkoutTemplateActionDispatcher
     {
-        private readonly IActionHandler<AddWorkoutTemplateAction> _addHandler;
-        private readonly IActionHandler<AddExercisesToWorkoutTemplateAction> _addExercisesHandler;
+        private readonly IActionHandlerFactory _factory;
 
-        public WorkoutTemplateActionDispatcher(
-            IActionHandler<AddWorkoutTemplateAction> addHandler,
-            IActionHandler<AddExercisesToWorkoutTemplateAction> addExercisesHandler)
+        public WorkoutTemplateActionDispatcher(IActionHandlerFactory factory)
         {
-            _addHandler = addHandler;
-            _addExercisesHandler = addExercisesHandler;
+            _factory = factory;
         }
 
         public DispatchResult Dispatch(AddWorkoutTemplateAction action)
@@ -28,7 +24,7 @@ namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
 
             try
             {
-                _addHandler.Handle(action);
+                _factory.Buid(action).Handle(action);
             }
             catch (Exception ex)
             {
@@ -48,7 +44,7 @@ namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
 
             try
             {
-                _addExercisesHandler.Handle(action);
+                _factory.Buid(action).Handle(action);
             }
             catch (Exception ex)
             {

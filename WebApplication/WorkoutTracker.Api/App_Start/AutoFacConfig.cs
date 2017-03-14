@@ -6,14 +6,14 @@ using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
 using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
-using WorkoutTracker.Core.Implementation.QueryHandlers;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
 using System.Collections.Generic;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
+using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
+using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Concrete;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
 using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries;
 using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
 using WorkoutTracker.Core.Implementation.Queries.Concrete;
 
@@ -42,6 +42,9 @@ namespace WorkoutTracker.Api
             builder.RegisterType<WorkoutTemplateActionDispatcher>().As<IWorkoutTemplateActionDispatcher>().InstancePerRequest();
             builder.RegisterType<WorkoutTemplateQueryHandler>().As<IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>>().InstancePerRequest();
             builder.RegisterType<ExerciseQueryHandler>().As<IQueryHandler<ExerciseQuery, IEnumerable<Exercise>>>().InstancePerRequest();
+            builder.RegisterType<ActionHandlerFactory>()
+                .As<IActionHandlerFactory>()
+                .InstancePerRequest();
         }
     }
 }

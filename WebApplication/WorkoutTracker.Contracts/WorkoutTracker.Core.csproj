@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionHandlerFactory\Concrete\ActionHandlerFactory.cs" />
+    <Compile Include="ActionHandlerFactory\Abstract\IActionHandlerFactory.cs" />
     <Compile Include="ActionHandlers\Concrete\WorkoutTemplateActionHandlers\AddExercisesToWorkoutTemplateActionHandler.cs" />
     <Compile Include="Actions\WorkoutTemplateActions\AddExercisesToWorkoutTemplateAction.cs" />
     <Compile Include="Actions\WorkoutTemplateActions\AddWorkoutTemplateAction.cs" />

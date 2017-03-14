@@ -1,21 +1,25 @@
 ﻿using Moq;
 using System.Collections.Generic;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
+using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Tests.Stubs;
 using Xunit;
 
 namespace WorkoutTracker.Tests.CommandDispatcherTests
 {
     public class WorkoutTemplateDispatcherTests
     {
-        private readonly Mock<IActionHandler<AddWorkoutTemplateAction>> _addHandler = new Mock<IActionHandler<AddWorkoutTemplateAction>>();
-        private readonly Mock<IActionHandler<AddExercisesToWorkoutTemplateAction>> _addExercisesHandler = new Mock<IActionHandler<AddExercisesToWorkoutTemplateAction>>();
+        private readonly Mock<IActionHandlerFactory> _addHandler = new Mock<IActionHandlerFactory>();
 
         [Fact]
         public void AddWorkoutTemplateAction_Succeeds()
         {
-            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object, null);
+            _addHandler
+                .Setup(f => f.Buid(It.IsAny<AddWorkoutTemplateAction>()))
+                .Returns(new StubSuccessActionHandler<AddWorkoutTemplateAction>());
+
+            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object);
             var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
             {
                 Name = "Test",
@@ -29,7 +33,11 @@ namespace WorkoutTracker.Tests.CommandDispatcherTests
         [Fact]
         public void AddExercisesToWorkoutTemplateAction_Succeeds()
         {
-            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object, _addExercisesHandler.Object);
+            _addHandler
+                .Setup(f => f.Buid(It.IsAny<AddExercisesToWorkoutTemplateAction>()))
+                .Returns(new StubSuccessActionHandler<AddExercisesToWorkoutTemplateAction>());
+
+            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object);
             var result = dispatcher.Dispatch(new AddExercisesToWorkoutTemplateAction
             {
                 Name = "Test",
