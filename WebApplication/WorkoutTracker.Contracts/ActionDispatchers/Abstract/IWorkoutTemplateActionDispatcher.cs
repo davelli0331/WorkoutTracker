@@ -6,5 +6,6 @@ namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract
     public interface IWorkoutTemplateActionDispatcher
     {
         DispatchResult Dispatch(AddWorkoutTemplateAction action);
+        DispatchResult Dispatch(AddExercisesToWorkoutTemplateAction action);
     }
 }

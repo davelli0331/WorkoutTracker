@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using WorkoutTracker.Api.Controllers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
@@ -36,6 +37,12 @@ namespace WorkoutTracker.Api.Controllers.Concrete
         public IHttpActionResult Post(AddWorkoutTemplateAction action)
         {
             return Result(_actionDispatcher.Dispatch(action));
+        }
+
+        [HttpPut]
+        public IHttpActionResult Exercises(AddExercisesToWorkoutTemplateAction addExercisesToWorkoutTemplateAction)
+        {
+            return Result(_actionDispatcher.Dispatch(addExercisesToWorkoutTemplateAction));
         }
     }
 }

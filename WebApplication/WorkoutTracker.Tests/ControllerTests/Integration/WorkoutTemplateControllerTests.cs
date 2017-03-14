@@ -21,7 +21,7 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
         {
             var dbContext = new WorkoutDbContext();
             var actionHandler = new AddWorkoutTemplateActionHandler(dbContext);
-            var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler);
+            var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler, null);
 
             var result = dispatcher.Dispatch(new AddWorkoutTemplateAction
             {
