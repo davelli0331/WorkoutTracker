@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
@@ -9,7 +8,7 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemp
 {
     public class AddExercisesToWorkoutTemplateActionHandler : IActionHandler<AddExercisesToWorkoutTemplateAction>
     {
-        private ICommandDbContext _dbContext;
+        private readonly ICommandDbContext _dbContext;
 
         public AddExercisesToWorkoutTemplateActionHandler(ICommandDbContext dbContext)
         {
@@ -25,6 +24,7 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemp
                     TemplateName = action.Name,
                     ExerciseId = e
                 }));
+            _dbContext.SaveChanges();
         }
     }
 }

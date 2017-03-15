@@ -7,7 +7,7 @@ namespace WorkoutTracker.Core.Implementation.DbContexts.EntityConfigurations
     {
         public WorkoutTemplateExerciseConfiguration()
         {
-            ToTable("Workout", "WorkoutTemplateExercise");
+            ToTable("Workout.WorkoutTemplateExercise");
 
             HasKey(e => new
             {

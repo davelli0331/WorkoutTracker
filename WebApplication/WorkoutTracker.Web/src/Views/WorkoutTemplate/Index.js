@@ -44,7 +44,6 @@ class WorkoutTemplateIndex extends React.Component {
         return (
             <div>
                 <h3>Workout Templates</h3>
-
                 {shownComponent}
             </div>
         );
