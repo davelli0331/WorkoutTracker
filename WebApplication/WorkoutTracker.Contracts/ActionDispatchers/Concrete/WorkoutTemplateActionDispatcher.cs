@@ -2,7 +2,6 @@
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
 using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
 
 namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
 {
@@ -15,27 +14,7 @@ namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
             _factory = factory;
         }
 
-        public DispatchResult Dispatch(AddWorkoutTemplateAction action)
-        {
-            var result = new DispatchResult
-            {
-                Succeeded = true
-            };
-
-            try
-            {
-                _factory.Buid(action).Handle(action);
-            }
-            catch (Exception ex)
-            {
-                result.Succeeded = false;
-                result.CaughtException = ex;
-            }
-
-            return result;
-        }
-
-        public DispatchResult Dispatch(AddExercisesToWorkoutTemplateAction action)
+        public DispatchResult Dispatch<TAction>(TAction action)
         {
             var result = new DispatchResult
             {
