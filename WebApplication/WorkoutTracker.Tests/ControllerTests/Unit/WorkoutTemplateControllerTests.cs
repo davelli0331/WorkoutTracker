@@ -72,29 +72,5 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
                     a.Description == "TestDescription"
                     )), Times.Once());
         }
-
-        [Fact]
-        public void Exercises_Succeeds()
-        {
-            _mockDispatcher
-                .Setup(d => d.Dispatch(It.IsAny<AddExercisesToWorkoutTemplateAction>()))
-                .Returns(new DispatchResult
-                {
-                    Succeeded = true
-                });
-
-            var controller = new WorkoutTemplateController(_mockDispatcher.Object, null);
-            var response = controller.Exercises(new AddExercisesToWorkoutTemplateAction
-            {
-                Name = "Test 1",
-                ExerciseIds = new List<int> { 1, 2, 3 }
-            });
-
-            Assert.IsType<OkResult>(response);
-
-            _mockDispatcher.Verify(d => d.Dispatch(It.Is<AddExercisesToWorkoutTemplateAction>(t =>
-                t.Name == "Test 1" &&
-                t.ExerciseIds.Count() == 3)), Times.Once());
-        }
     }
 }

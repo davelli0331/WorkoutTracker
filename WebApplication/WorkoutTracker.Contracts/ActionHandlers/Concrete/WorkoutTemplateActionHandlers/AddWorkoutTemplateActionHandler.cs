@@ -22,6 +22,15 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemp
                 TemplateDescription = command.Description
             };
 
+            //_dbContext.DeleteWhere<WorkoutTemplateExercise>(wte => wte.TemplateName == action.Name);
+            //_dbContext.CreateRange(action.ExerciseIds
+            //    .Select(e => new WorkoutTemplateExercise
+            //    {
+            //        TemplateName = action.Name,
+            //        ExerciseId = e
+            //    }));
+            //_dbContext.SaveChanges();
+
             _dbContext.Create(workoutTemplate);
             _dbContext.SaveChanges();
         }

@@ -1,5 +1,4 @@
 ﻿using Moq;
-using System.Collections.Generic;
 using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
 using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
 using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
@@ -24,24 +23,6 @@ namespace WorkoutTracker.Tests.CommandDispatcherTests
             {
                 Name = "Test",
                 Description = "Description"
-            });
-
-            Assert.True(result.Succeeded);
-            Assert.Null(result.CaughtException);
-        }
-
-        [Fact]
-        public void AddExercisesToWorkoutTemplateAction_Succeeds()
-        {
-            _addHandler
-                .Setup(f => f.Buid(It.IsAny<AddExercisesToWorkoutTemplateAction>()))
-                .Returns(new StubSuccessActionHandler<AddExercisesToWorkoutTemplateAction>());
-
-            var dispatcher = new WorkoutTemplateActionDispatcher(_addHandler.Object);
-            var result = dispatcher.Dispatch(new AddExercisesToWorkoutTemplateAction
-            {
-                Name = "Test",
-                ExerciseIds = new List<int> { 1, 2, 3 }
             });
 
             Assert.True(result.Succeeded);

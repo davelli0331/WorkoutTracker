@@ -36,11 +36,5 @@ namespace WorkoutTracker.Api.Controllers.Concrete
         {
             return Result(_actionDispatcher.Dispatch(action));
         }
-
-        [HttpPut]
-        public IHttpActionResult Exercises(AddExercisesToWorkoutTemplateAction addExercisesToWorkoutTemplateAction)
-        {
-            return Result(_actionDispatcher.Dispatch(addExercisesToWorkoutTemplateAction));
-        }
     }
 }

@@ -46,8 +46,6 @@
   <ItemGroup>
     <Compile Include="ActionHandlerFactory\Concrete\ActionHandlerFactory.cs" />
     <Compile Include="ActionHandlerFactory\Abstract\IActionHandlerFactory.cs" />
-    <Compile Include="ActionHandlers\Concrete\WorkoutTemplateActionHandlers\AddExercisesToWorkoutTemplateActionHandler.cs" />
-    <Compile Include="Actions\WorkoutTemplateActions\AddExercisesToWorkoutTemplateAction.cs" />
     <Compile Include="Actions\WorkoutTemplateActions\AddWorkoutTemplateAction.cs" />
     <Compile Include="ActionDispatchers\Abstract\IWorkoutTemplateActionDispatcher.cs" />
     <Compile Include="ActionDispatchers\Concrete\WorkoutTemplateActionDispatcher.cs" />

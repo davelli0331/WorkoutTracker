@@ -1,5 +1,4 @@
 import React from 'react';
-import AddWorkoutTemplate from '../../Components/WorkoutTemplateComponents/AddWorkoutTemplate';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import WorkoutTemplateIndex from '../WorkoutTemplate/Index';
 

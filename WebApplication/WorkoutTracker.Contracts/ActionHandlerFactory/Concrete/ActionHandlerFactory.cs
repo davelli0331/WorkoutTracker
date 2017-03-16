@@ -22,11 +22,6 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlerFactory.Concrete
                 return (IActionHandler<TAction>) new AddWorkoutTemplateActionHandler(_dbContext);
             }
 
-            if (typeof (TAction) == typeof (AddExercisesToWorkoutTemplateAction))
-            {
-                return (IActionHandler<TAction>) new AddExercisesToWorkoutTemplateActionHandler(_dbContext);
-            }
-
             return null;
         }
     }

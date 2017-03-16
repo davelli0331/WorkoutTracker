@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandDispatcherTests\WorkoutTemplateDispatcherTests.cs" />
-    <Compile Include="CommandTests\WorkoutTemplateCommandTests\AddExercisesToWorkoutTemplateActionHandlerTests.cs" />
     <Compile Include="CommandTests\WorkoutTemplateCommandTests\AddWorkoutTemplateCommandTests.cs" />
     <Compile Include="ControllerTests\Integration\WorkoutTemplateControllerTests.cs" />
     <Compile Include="ControllerTests\Unit\WorkoutTemplateControllerTests.cs" />

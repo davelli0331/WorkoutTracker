@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using WorkoutTracker.Core.Implementation.Domain;
 
 namespace WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions
 {
@@ -6,5 +7,6 @@ namespace WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        private IEnumerable<WorkoutTemplateExercise> Exercises { get; set; }
     }
 }

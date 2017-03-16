@@ -42,22 +42,5 @@ namespace WorkoutTracker.Tests.ControllerTests.Integration
 
             Assert.Equal(1, result.Content.Count());
         }
-
-        [Fact]
-        public void Add_Exercises_Succeeds()
-        {
-            var dbContext = new WorkoutDbContext();
-            var handlerFactory = new ActionHandlerFactory(dbContext);
-            var dispatcher = new WorkoutTemplateActionDispatcher(handlerFactory);
-
-            var controller = new WorkoutTemplateController(dispatcher, null);
-            var result = (OkResult)controller.Exercises(new AddExercisesToWorkoutTemplateAction
-            {
-                Name = "Push Day",
-                ExerciseIds = new List<int> { 1, 2 }
-            });
-
-            Assert.NotNull(result);
-        }
     }
 }
