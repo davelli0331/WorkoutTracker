@@ -14,24 +14,17 @@ namespace WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemp
             _dbContext = dbContext;
         }
 
-        public void Handle(AddWorkoutTemplateAction command)
+        public void Handle(AddWorkoutTemplateAction action)
         {
             var workoutTemplate = new WorkoutTemplate
             {
-                TemplateName =  command.Name,
-                TemplateDescription = command.Description
+                TemplateName =  action.Name,
+                TemplateDescription = action.Description
             };
 
-            //_dbContext.DeleteWhere<WorkoutTemplateExercise>(wte => wte.TemplateName == action.Name);
-            //_dbContext.CreateRange(action.ExerciseIds
-            //    .Select(e => new WorkoutTemplateExercise
-            //    {
-            //        TemplateName = action.Name,
-            //        ExerciseId = e
-            //    }));
-            //_dbContext.SaveChanges();
-
             _dbContext.Create(workoutTemplate);
+            _dbContext.DeleteWhere<WorkoutTemplateExercise>(wte => wte.TemplateName == action.Name);
+            _dbContext.CreateRange(action.Exercises);
             _dbContext.SaveChanges();
         }
     }
