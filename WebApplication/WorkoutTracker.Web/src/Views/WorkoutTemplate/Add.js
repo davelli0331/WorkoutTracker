@@ -2,7 +2,40 @@ import React from 'react';
 import Immutable from 'immutable';
 import Actions from '../../Actions/WorkoutTemplate/WorkoutTemplateActions';
 
-class WorkoutTemplateAdd extends React.Component {
+const WorkoutTemplateAdd = ({
+    availableExercises,
+    onNameChanged,
+    onDescriptionChanged,
+    onExerciseChanged,
+    onSubmitClicked
+}) => {
+    return (<div>
+        <fieldset>
+            <ul>
+                <li>
+                    <label>Name <input type="text" onChange={onNameChanged} /></label>
+                </li>
+                <li>
+                    <label>Description <textarea onChange={onDescriptionChanged}></textarea></label>
+                </li>
+            </ul>
+        </fieldset>
+        <ul>
+            {[...availableExercises.values()].map((exercise, index) => {
+                return (<li key={exercise.id}>
+                    <input type="checkbox" onChange={() => onExerciseChanged(exercise.id, e.target.checked)} /> 
+                    {exercise.name} 
+                    Sets: <input type="text" onChange={() => onExerciseChanged(exercise.id, e.target)} /> 
+                    Reps: <input type="text" />
+                </li>);
+            })}
+        </ul>
+        <button onClick={onSubmitClicked}>Finish</button>
+    </div>
+    );
+};
+
+/*class WorkoutTemplateAdd extends React.Component {
     constructor(props) {
         super(props);
 
@@ -35,21 +68,9 @@ class WorkoutTemplateAdd extends React.Component {
 
     render() {
         return (
-            <div>
-                <fieldset>
-                    <ul>
-                        <li>
-                            <label>Name <input type="text" onChange={this.onNameChanged.bind(this)} /></label>
-                        </li>
-                        <li>
-                            <label>Description <textarea onChange={this.onDescriptionChanged.bind(this)}></textarea></label>
-                        </li>
-                    </ul>
-                </fieldset>
-                <button onClick={this.onClickSubmit.bind(this)}>Finish</button>
-            </div>
+            
         );
     }
-}
+}*/
 
 export default WorkoutTemplateAdd;

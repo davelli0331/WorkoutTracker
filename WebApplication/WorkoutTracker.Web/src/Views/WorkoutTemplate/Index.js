@@ -1,7 +1,6 @@
 import React from 'react';
-import Add from './Add';
 import WorkoutTemplateListContainer from '../../Containers/WorkoutTemplateListContainer';
-import ExerciseCheckboxListContainer from '../../Containers/Exercise/CheckboxListContainer';
+import WorkoutTemplateAddContainer from '../../Containers/WorkoutTemplate/AddContainer';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -32,12 +31,8 @@ class WorkoutTemplateIndex extends React.Component {
                 shownComponent = <WorkoutTemplateListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
                 break;
 
-            case 'addExercises':
-                shownComponent = <ExerciseCheckboxListContainer workoutTemplateName={this.state.addedWorkoutTemplateName} />
-                break;
-
             default:
-                shownComponent = <Add OnWorkoutTemplateAdded={this.onWorkoutTemplateAdded.bind(this)} />
+                shownComponent = <WorkoutTemplateAddContainer />
                 break;
         }
 

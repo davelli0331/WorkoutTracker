@@ -7,7 +7,6 @@ const ExerciseActions = {
         Api
             .fetch('http://localhost/WorkoutTracker.Api/api/Exercise',
             function (exercises) {
-
                 Dispatcher.dispatch({
                     type: ActionTypes.FETCH_EXERCISES,
                     exercises
