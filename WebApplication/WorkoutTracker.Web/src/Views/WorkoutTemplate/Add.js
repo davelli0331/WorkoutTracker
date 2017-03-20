@@ -1,39 +1,67 @@
 import React from 'react';
 import Immutable from 'immutable';
 import Actions from '../../Actions/WorkoutTemplate/WorkoutTemplateActions';
+import WorkoutTemplate from '../../Data/WorkoutTemplate';
 
-const WorkoutTemplateAdd = ({
-    availableExercises,
-    onNameChanged,
-    onDescriptionChanged,
-    onExerciseChanged,
-    onSubmitClicked
-}) => {
-    return (<div>
-        <fieldset>
+class WorkoutTemplateAdd extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            workoutTemplate: new WorkoutTemplate()
+        };
+    }
+
+    onNameChanged(e) {
+        var name = e.target.value;
+        this.setState((prevState, props) => ({
+            workoutTemplate: prevState.workoutTemplate.set('name', name)
+        }));
+    }
+
+    onDescriptionChanged(e) {
+        var description = e.target.value;
+        var workoutTemplate = this.state.workoutTemplate.set('description', description);
+        this.setState({
+            workoutTemplate: workoutTemplate
+        });
+    }
+
+    onSubmitClicked(e) {
+
+    }
+
+    onExerciseNumberOfSetsChanged(exerciseId, numberOfSets) {
+        
+    }
+
+    render() {
+        return (<div>
+            <fieldset>
+                <ul>
+                    <li>
+                        <label>Name <input type="text" onChange={this.onNameChanged.bind(this)} /></label>
+                    </li>
+                    <li>
+                        <label>Description <textarea onChange={this.onDescriptionChanged.bind(this)}></textarea></label>
+                    </li>
+                </ul>
+            </fieldset>
             <ul>
-                <li>
-                    <label>Name <input type="text" onChange={onNameChanged} /></label>
-                </li>
-                <li>
-                    <label>Description <textarea onChange={onDescriptionChanged}></textarea></label>
-                </li>
+                {[...this.props.availableExercises.values()].map((exercise, index) => {
+                    return (<li key={exercise.id}>
+                        <input type="checkbox" />
+                        {exercise.name}
+                        Sets: <input type="text" />
+                        Reps: <input type="text" />
+                    </li>);
+                })}
             </ul>
-        </fieldset>
-        <ul>
-            {[...availableExercises.values()].map((exercise, index) => {
-                return (<li key={exercise.id}>
-                    <input type="checkbox" onChange={() => onExerciseChanged(exercise.id, e.target.checked)} /> 
-                    {exercise.name} 
-                    Sets: <input type="text" onChange={() => onExerciseChanged(exercise.id, e.target)} /> 
-                    Reps: <input type="text" />
-                </li>);
-            })}
-        </ul>
-        <button onClick={onSubmitClicked}>Finish</button>
-    </div>
-    );
-};
+            <button onClick={this.onSubmitClicked.bind(this)}>Finish</button>
+        </div>
+        );
+    }
+}
 
 /*class WorkoutTemplateAdd extends React.Component {
     constructor(props) {
