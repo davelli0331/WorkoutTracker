@@ -28,15 +28,15 @@ class WorkoutTemplateAdd extends React.Component {
         });
     }
 
-    onSubmitClicked(e) {
-
-    }
-
     onExerciseNumberOfSetsChanged(exerciseId, numberOfSets) {
         let wet = this.findWorkoutTemplateExercise(exerciseId);
         wet = wet.set('NumberOfSets', numberOfSets);
 
-        let wets = this.state.workoutTemplate.exercises.set(-1, wet);
+        let wets = this.state.workoutTemplate.exercises.set(
+            this.state.workoutTemplate.exercises.findIndex((item) => {
+                return item.ExerciseId === exerciseId
+            })
+            , wet);
 
         this.setState((prevState, props) => ({
             workoutTemplate: this.state.workoutTemplate.set('exercises', wets)
@@ -47,7 +47,11 @@ class WorkoutTemplateAdd extends React.Component {
         let wet = this.findWorkoutTemplateExercise(exerciseId);
         wet = wet.set('NumberOfReps', numberOfReps);
 
-        let wets = this.state.workoutTemplate.exercises.set(-1, wet);
+        let wets = this.state.workoutTemplate.exercises.set(
+            this.state.workoutTemplate.exercises.findIndex((item) => {
+                return item.ExerciseId === exerciseId
+            })
+            , wet);
 
         this.setState((prevState, props) => ({
             workoutTemplate: this.state.workoutTemplate.set('exercises', wets)
@@ -76,6 +80,10 @@ class WorkoutTemplateAdd extends React.Component {
         this.setState((prevState, props) => ({
             workoutTemplate: prevState.workoutTemplate.set('exercises', wets)
         }));
+    }
+
+    onSubmitClicked(e) {
+        this.props.onSubmitClicked(this.state.workoutTemplate);
     }
 
     findWorkoutTemplateExercise(exerciseId) {

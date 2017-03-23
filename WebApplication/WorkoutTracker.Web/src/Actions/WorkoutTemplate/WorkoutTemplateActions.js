@@ -3,11 +3,19 @@ import WorkoutTemplateActionTypes from './WorkoutTemplateActionTypes';
 import Api from '../../Api/Api';
 
 const Actions = {
-    addWorkoutTemplate({ name, description }) {
+    addWorkoutTemplate({ name, description, exercises }) {
         Api
             .post('http://localhost/WorkoutTracker.Api/api/WorkoutTemplate', {
                 Name: name,
-                Description: description
+                Description: description,
+                Exercises: exercises.map((ex) => {
+                    return {
+                        ExerciseId: ex.ExerciseId,
+                        TemplateName: name,
+                        PrescribedNumberOfSets: ex.NumberOfSets,
+                        PrescribedNumberOfReps: ex.NumberOfReps
+                    };
+                })
             },
             () => {
                 WorkoutDispatcher.dispatch({

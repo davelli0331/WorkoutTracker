@@ -3,6 +3,7 @@ import { Container } from 'flux/utils';
 import ExerciseActions from '../../Actions/ExerciseActions/ExerciseActions';
 import ExerciseStore from '../../Stores/ExerciseStore';
 import WorkoutTemplate from '../../Data/WorkoutTemplate';
+import WorkoutTemplateActions from '../../Actions/WorkoutTemplate/WorkoutTemplateActions';
 import WorkoutTemplateAdd from '../../Views/WorkoutTemplate/Add';
 import Immutable from 'immutable';
 
@@ -16,7 +17,6 @@ class WorkoutTemplateAddContainer extends React.Component {
 
     static calculateState() {
         return {
-            workoutTemplate: new WorkoutTemplate(),
             availableExercises: ExerciseStore.getState()
         };
     }
@@ -33,8 +33,14 @@ class WorkoutTemplateAddContainer extends React.Component {
         ExerciseActions.fetch();
     }
 
+    submitWorkoutTemplate(workoutTemplate) {
+        WorkoutTemplateActions.addWorkoutTemplate(workoutTemplate);
+    }
+
     render() {
-        return (<WorkoutTemplateAdd availableExercises={this.state.availableExercises} />
+        return (<WorkoutTemplateAdd
+            availableExercises={this.state.availableExercises}
+            onSubmitClicked={this.submitWorkoutTemplate.bind(this)} />
         );
     }
 }
