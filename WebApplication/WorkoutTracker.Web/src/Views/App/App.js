@@ -2,6 +2,8 @@ import React from 'react';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import WorkoutTemplateIndex from '../WorkoutTemplate/Index';
 
+import './App.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,9 @@ class App extends React.Component {
     return (
       <div>
         <NavigationBar onLinkClicked={this.navigationLinkClicked.bind(this)} />
-        {activeComponent}
+        <div className="App-content">
+          {activeComponent}
+        </div>
       </div>
     )
   }

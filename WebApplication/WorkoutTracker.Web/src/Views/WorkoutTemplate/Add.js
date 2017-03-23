@@ -3,6 +3,7 @@ import Immutable from 'immutable';
 import Actions from '../../Actions/WorkoutTemplate/WorkoutTemplateActions';
 import WorkoutTemplate from '../../Data/WorkoutTemplate';
 import WorkoutTemplateExercise from '../../Data/WorkoutTemplateExercise';
+import { Form, FormGroup, FormControl, Col, Checkbox, ControlLabel } from 'react-bootstrap';
 
 class WorkoutTemplateAdd extends React.Component {
     constructor(props) {
@@ -95,69 +96,55 @@ class WorkoutTemplateAdd extends React.Component {
     }
 
     render() {
-        return (<div>
-            <fieldset>
-                <ul>
-                    <li>
-                        <label>Name <input type="text" onChange={this.onNameChanged.bind(this)} /></label>
-                    </li>
-                    <li>
-                        <label>Description <textarea onChange={this.onDescriptionChanged.bind(this)}></textarea></label>
-                    </li>
-                </ul>
-            </fieldset>
-            <ul>
+        return (
+            <Form horizontal>
+                <FormGroup>
+                    <Col componentClass={ControlLabel} md={1}>
+                        Name
+                    </Col>
+                    <Col md={4}>
+                        <FormControl type="text" placeholder="Workout Template Name" onChange={this.onNameChanged.bind(this)} />
+                    </Col>
+                    <Col md={7}>
+                    </Col>
+                </FormGroup>
+                <FormGroup>
+                    <Col componentClass={ControlLabel} md={1}>
+                        Description
+                    </Col>
+                    <Col md={8}>
+                        <FormControl type="text" placeholder="Workout Template Description" onChange={this.onDescriptionChanged.bind(this)} />
+                    </Col>
+                    <Col md={3}>
+                    </Col>
+                </FormGroup>
+
                 {[...this.props.availableExercises.values()].map((exercise, index) => {
-                    return (<li key={exercise.id}>
-                        <input type="checkbox" onChange={(e) => this.onAddOrRemoveExerciseChecked(exercise.id, e.target.checked)} />
-                        {exercise.name}
-                        Sets: <input type="text" onChange={(e) => this.onExerciseNumberOfSetsChanged(exercise.id, e.target.value)} />
-                        Reps: <input type="text" onChange={(e) => this.onExerciseNumberOfRepsChanged(exercise.id, e.target.value)} />
-                    </li>);
+                    return (
+                        <FormGroup key={exercise.id}>
+                            <Col md={2}>
+                                <Checkbox>{exercise.name}</Checkbox>
+                            </Col>
+                            <Col componentClass={ControlLabel} md={1}>
+                                Sets
+                            </Col>
+                            <Col md={1}>
+                                <FormControl type="number" onChange={(e) => this.onExerciseNumberOfSetsChanged(exercise.id, e.target.value)} />
+                            </Col>
+                            <Col componentClass={ControlLabel} md={1}>
+                                Reps
+                            </Col>
+                            <Col md={1}>
+                                <FormControl type="number" onChange={(e) => this.onExerciseNumberOfRepsChanged(exercise.id, e.target.value)} />
+                            </Col>
+                            <Col md={6}>
+                            </Col>
+                        </FormGroup>);
                 })}
-            </ul>
-            <button onClick={this.onSubmitClicked.bind(this)}>Finish</button>
-        </div>
+
+            </Form>
         );
     }
 }
-
-/*class WorkoutTemplateAdd extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            name: '',
-            description: ''
-        };
-    }
-
-    onNameChanged(e) {
-        this.setState({
-            name: e.target.value
-        });
-    }
-
-    onDescriptionChanged(e) {
-        this.setState({
-            description: e.target.value
-        });
-    }
-
-    onClickSubmit() {
-        Actions.addWorkoutTemplate({
-            name: this.state.name,
-            description: this.state.description
-        });
-
-        this.props.OnWorkoutTemplateAdded(this.state.name);
-    }
-
-    render() {
-        return (
-            
-        );
-    }
-}*/
 
 export default WorkoutTemplateAdd;

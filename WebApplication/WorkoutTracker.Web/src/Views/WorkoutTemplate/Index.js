@@ -1,6 +1,7 @@
 import React from 'react';
 import WorkoutTemplateListContainer from '../../Containers/WorkoutTemplateListContainer';
 import WorkoutTemplateAddContainer from '../../Containers/WorkoutTemplate/AddContainer';
+import { PageHeader } from 'react-bootstrap';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -38,7 +39,9 @@ class WorkoutTemplateIndex extends React.Component {
 
         return (
             <div>
-                <h3>Workout Templates</h3>
+                <PageHeader>
+                    Workout Templates
+                </PageHeader>
                 {shownComponent}
             </div>
         );

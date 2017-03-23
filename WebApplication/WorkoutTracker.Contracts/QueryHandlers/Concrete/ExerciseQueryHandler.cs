@@ -19,6 +19,7 @@ namespace WorkoutTracker.Core.Implementation.QueryHandlers.Concrete
         public IEnumerable<Exercise> Handle(ExerciseQuery query)
         {
             return _dbContext.Query<Exercise>()
+                .OrderBy(e => e.ExerciseName)
                 .ToList();
         }
     }
