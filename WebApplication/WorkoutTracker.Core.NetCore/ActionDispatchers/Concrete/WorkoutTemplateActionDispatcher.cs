@@ -1,9 +1,9 @@
 ﻿using System;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
-using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Utility;
+using WorkoutTracker.Core.NetCore.ActionHandlerFactory.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete
+namespace WorkoutTracker.Core.NetCore.ActionDispatchers.Concrete
 {
     public class WorkoutTemplateActionDispatcher : IWorkoutTemplateActionDispatcher
     {

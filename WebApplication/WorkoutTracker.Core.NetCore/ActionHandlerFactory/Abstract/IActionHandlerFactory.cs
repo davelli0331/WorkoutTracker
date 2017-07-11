@@ -1,6 +1,6 @@
-﻿using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
+﻿using WorkoutTracker.Core.NetCore.ActionHandlers.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract
+namespace WorkoutTracker.Core.NetCore.ActionHandlerFactory.Abstract
 {
     public interface IActionHandlerFactory
     {

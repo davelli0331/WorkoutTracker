@@ -1,18 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
-using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Concrete;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
-using WorkoutTracker.Core.Implementation.DbContexts.Concrete;
-using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries.Concrete;
-using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
-using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Concrete;
+using WorkoutTracker.Core.NetCore.ActionHandlerFactory.Abstract;
+using WorkoutTracker.Core.NetCore.ActionHandlerFactory.Concrete;
+using WorkoutTracker.Core.NetCore.ActionHandlers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
+using WorkoutTracker.Core.NetCore.DbContexts.Concrete;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
 
 namespace WorkoutTracker.Api.NetCore.Configuration
 {

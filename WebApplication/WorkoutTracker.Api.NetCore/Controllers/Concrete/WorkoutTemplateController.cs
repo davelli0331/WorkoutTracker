@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using WorkoutTracker.Api.Controllers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries.Concrete;
-using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using WorkoutTracker.Api.NetCore.Controllers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
 
-namespace WorkoutTracker.Api.Controllers.Concrete
+namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
 {
     public class WorkoutTemplateController : BaseController
     {

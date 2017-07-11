@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Utility
+namespace WorkoutTracker.Core.NetCore.ActionDispatchers.Utility
 {
     public class DispatchResult
     {

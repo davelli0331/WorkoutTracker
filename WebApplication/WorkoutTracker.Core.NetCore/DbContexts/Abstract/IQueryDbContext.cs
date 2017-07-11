@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WorkoutTracker.Core.Implementation.DbContexts.Abstract
+namespace WorkoutTracker.Core.NetCore.DbContexts.Abstract
 {
     public interface IQueryDbContext
     {

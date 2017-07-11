@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WorkoutTracker.Core.Implementation.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WorkoutTracker.Core.NetCore.DbContexts.Utility;
-using Microsoft.EntityFrameworkCore;
+using WorkoutTracker.Core.NetCore.Domain;
 
-namespace WorkoutTracker.Core.Implementation.DbContexts.EntityConfigurations
+namespace WorkoutTracker.Core.NetCore.DbContexts.EntityConfigurations
 {
     public class WorkoutTemplateExerciseConfiguration : IEntityConfiguration<WorkoutTemplateExercise>
     {

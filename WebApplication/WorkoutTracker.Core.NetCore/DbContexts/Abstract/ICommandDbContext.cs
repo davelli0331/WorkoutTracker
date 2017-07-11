@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace WorkoutTracker.Core.Implementation.DbContexts.Abstract
+namespace WorkoutTracker.Core.NetCore.DbContexts.Abstract
 {
     public interface ICommandDbContext
     {

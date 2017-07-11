@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries.Abstract;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.Queries.Concrete
+namespace WorkoutTracker.Core.NetCore.Queries.Concrete
 {
     public class ExerciseQuery : IQuery<IEnumerable<Exercise>>
     {

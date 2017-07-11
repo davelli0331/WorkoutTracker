@@ -1,6 +1,6 @@
-﻿using WorkoutTracker.Core.Implementation.Queries.Abstract;
+﻿using WorkoutTracker.Core.NetCore.Queries.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.QueryDispatcher.Abstract
+namespace WorkoutTracker.Core.NetCore.QueryDispatcher.Abstract
 {
     public interface IWorkoutQueryDispatcher
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WorkoutTracker.Core.Implementation.Domain
+namespace WorkoutTracker.Core.NetCore.Domain
 {
     public class WorkoutTemplate
     {

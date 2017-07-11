@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Web.Http.Results;
-using Moq;
-using WorkoutTracker.Api.Controllers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Api.NetCore.Controllers.Concrete;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Utility;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
 using Xunit;
 
-namespace WorkoutTracker.Tests.ControllerTests.Unit
+namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
 {
     public class WorkoutTemplateControllerTests
     {

@@ -1,6 +1,6 @@
-﻿using WorkoutTracker.Core.Implementation.Queries.Abstract;
+﻿using WorkoutTracker.Core.NetCore.Queries.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.QueryHandlers.Abstract
+namespace WorkoutTracker.Core.NetCore.QueryHandlers.Abstract
 {
     public interface IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>

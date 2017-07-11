@@ -1,10 +1,10 @@
-﻿using WorkoutTracker.Core.Implementation.ActionHandlerFactory.Abstract;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
+﻿using WorkoutTracker.Core.NetCore.ActionHandlerFactory.Abstract;
+using WorkoutTracker.Core.NetCore.ActionHandlers.Abstract;
+using WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.ActionHandlerFactory.Concrete
+namespace WorkoutTracker.Core.NetCore.ActionHandlerFactory.Concrete
 {
     public class ActionHandlerFactory : IActionHandlerFactory
     {

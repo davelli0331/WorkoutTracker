@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
+using WorkoutTracker.Core.NetCore.ActionDispatchers.Utility;
 
-namespace WorkoutTracker.Api.Controllers.Abstract
+namespace WorkoutTracker.Api.NetCore.Controllers.Abstract
 {
     public class BaseController : Controller
     {

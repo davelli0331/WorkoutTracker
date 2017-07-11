@@ -1,6 +1,6 @@
-﻿using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
+﻿using WorkoutTracker.Core.NetCore.ActionDispatchers.Utility;
 
-namespace WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract
+namespace WorkoutTracker.Core.NetCore.ActionDispatchers.Abstract
 {
     public interface IWorkoutTemplateActionDispatcher
     {

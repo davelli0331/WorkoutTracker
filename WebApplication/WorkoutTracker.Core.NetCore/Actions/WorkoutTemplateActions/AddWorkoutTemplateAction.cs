@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WorkoutTracker.Core.Implementation.Domain;
+using WorkoutTracker.Core.NetCore.Domain;
 
-namespace WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions
+namespace WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions
 {
     public class AddWorkoutTemplateAction
     {

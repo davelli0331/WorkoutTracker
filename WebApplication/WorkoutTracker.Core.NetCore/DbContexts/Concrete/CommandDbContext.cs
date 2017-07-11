@@ -1,13 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
-using WorkoutTracker.Core.Implementation.DbContexts.EntityConfigurations;
+using Microsoft.EntityFrameworkCore;
+using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
+using WorkoutTracker.Core.NetCore.DbContexts.EntityConfigurations;
 using WorkoutTracker.Core.NetCore.DbContexts.Utility;
 
-namespace WorkoutTracker.Core.Implementation.DbContexts.Concrete
+namespace WorkoutTracker.Core.NetCore.DbContexts.Concrete
 {
     public class WorkoutDbContext : DbContext, ICommandDbContext, IQueryDbContext
     {

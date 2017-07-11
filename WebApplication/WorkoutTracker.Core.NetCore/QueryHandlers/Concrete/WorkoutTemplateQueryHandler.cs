@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
-using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries.Concrete;
-using WorkoutTracker.Core.Implementation.QueryHandlers.Abstract;
+using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.QueryHandlers.Concrete
+namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
 {
     public class WorkoutTemplateQueryHandler 
         : IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>

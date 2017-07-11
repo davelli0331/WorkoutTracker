@@ -104,19 +104,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\WorkoutTracker.Api\WorkoutTracker.Api.csproj">
       <Project>{e08a8297-f691-4951-9b05-13f2341efbc6}</Project>
       <Name>WorkoutTracker.Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\WorkoutTracker.Contracts\WorkoutTracker.Core.csproj">
-      <Project>{B79D88FB-3AD9-49E9-9E46-F2BCC448460D}</Project>
+      <Project>{b79d88fb-3ad9-49e9-9e46-f2bcc448460d}</Project>
       <Name>WorkoutTracker.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WorkoutTracker.Core.Implementation.Queries.Abstract;
-using WorkoutTracker.Core.Implementation.QueryDispatcher.Abstract;
+using WorkoutTracker.Core.NetCore.Queries.Abstract;
+using WorkoutTracker.Core.NetCore.QueryDispatcher.Abstract;
 
-namespace WorkoutTracker.Core.Implementation.QueryDispatcher.Concrete
+namespace WorkoutTracker.Core.NetCore.QueryDispatcher.Concrete
 {
     public class QueryDispatcher : IWorkoutQueryDispatcher
     {
