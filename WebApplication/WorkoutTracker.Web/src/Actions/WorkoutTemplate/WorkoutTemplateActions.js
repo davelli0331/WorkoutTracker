@@ -5,7 +5,7 @@ import Api from '../../Api/Api';
 const Actions = {
     addWorkoutTemplate({ name, description, exercises }) {
         Api
-            .post('http://localhost/WorkoutTracker.Api/api/WorkoutTemplate', {
+            .post('http://localhost:65500/api/WorkoutTemplate', {
                 Name: name,
                 Description: description,
                 Exercises: exercises.map((ex) => {
@@ -27,7 +27,7 @@ const Actions = {
 
     fetch() {
         Api
-            .fetch('http://localhost/WorkoutTracker.Api/api/WorkoutTemplate',
+            .fetch('http://localhost:65500/api/WorkoutTemplate',
             (workoutTemplates) => {
                 WorkoutDispatcher.dispatch({
                     type: WorkoutTemplateActionTypes.FETCH_WORKOUT_TEMPLATE,
