@@ -82,6 +82,7 @@
     <None Include="SQL2012.publish.xml" />
     <None Include="SQL2016.publish.xml" />
     <None Include="DataSolution.publish.xml" />
+    <None Include="Work.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Seed Scripts\Seed Lookups.PostDeployment.sql" />

@@ -14,10 +14,13 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Integration
 {
     public class WorkoutTemplateControllerTests
     {
+        private const string _connectionString =
+            @"Server=C05102\MSSQL2012;Database=WorkoutTracker;Trusted_Connection=True;";
+
         [Fact]
         public void Post_Succeeds()
         {
-            var dbContext = new WorkoutDbContext();
+            var dbContext = new WorkoutDbContext(_connectionString);
             var actionHandler = new ActionHandlerFactory(dbContext);
             var dispatcher = new WorkoutTemplateActionDispatcher(actionHandler);
 
@@ -25,6 +28,7 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Integration
             {
                 Name = "Test",
                 Description = "Test Description"
+
             });
 
             Assert.True(result.Succeeded);
@@ -34,7 +38,7 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Integration
         [Fact]
         public void Get_Succeeds()
         {
-            var dbContext = new WorkoutDbContext();
+            var dbContext = new WorkoutDbContext(_connectionString);
             var handler = new WorkoutTemplateQueryHandler(dbContext);
 
             var controller = new WorkoutTemplateController(null, handler);

@@ -7,14 +7,9 @@ namespace WorkoutTracker.Core.NetCore.DbContexts.EntityConfigurations
 {
     public class WorkoutTemplateExerciseConfiguration : IEntityConfiguration<WorkoutTemplateExercise>
     {
-        public WorkoutTemplateExerciseConfiguration()
-        {
-            
-        }
-
         public void Configure(EntityTypeBuilder<WorkoutTemplateExercise> entityTypeBuilder)
         {
-            entityTypeBuilder.ToTable("Workout.WorkoutTemplateExercise");
+            entityTypeBuilder.ToTable("WorkoutTemplateExercise", "Workout");
 
             entityTypeBuilder.HasKey(e => new
             {

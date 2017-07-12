@@ -11,6 +11,17 @@ namespace WorkoutTracker.Core.NetCore.DbContexts.Concrete
 {
     public class WorkoutDbContext : DbContext, ICommandDbContext, IQueryDbContext
     {
+        private readonly string _connectionString = @"Server=DELLXPS13\SQL2016EXPRESS;Database=WorkoutTracker;Trusted_Connection=True;";
+
+        public WorkoutDbContext()
+        {
+        }
+
+        public WorkoutDbContext(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         public void Create<TEntity>(TEntity entity) where TEntity : class
         {
             Set<TEntity>()
@@ -19,10 +30,13 @@ namespace WorkoutTracker.Core.NetCore.DbContexts.Concrete
 
         public void CreateRange<TEntity>(IEnumerable<TEntity> enumerable) where TEntity : class
         {
-            foreach (var entity in enumerable)
+            if (enumerable != null)
             {
-                Set<TEntity>()
-                    .Add(entity);
+                foreach (var entity in enumerable)
+                {
+                    Set<TEntity>()
+                        .Add(entity);
+                }
             }
         }
 
@@ -42,7 +56,7 @@ namespace WorkoutTracker.Core.NetCore.DbContexts.Concrete
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DELLXPS13\SQL2016EXPRESS;Database=WorkoutTracker;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(_connectionString);
             base.OnConfiguring(optionsBuilder);
         }
 
