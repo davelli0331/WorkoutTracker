@@ -1,4 +1,8 @@
-﻿using WorkoutTracker.Tests.NetCore.Stubs;
+﻿using System.Linq;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
+using WorkoutTracker.Tests.NetCore.Stubs;
 using Xunit;
 
 namespace WorkoutTracker.Tests.NetCore.QueryHandlerTests
