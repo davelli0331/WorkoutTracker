@@ -9,12 +9,13 @@ using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
 
 namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
 {
+    [Route("api/[controller]")]
     public class WorkoutTemplateController : BaseController
     {
         private readonly IWorkoutTemplateActionDispatcher _actionDispatcher;
         private readonly IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>> _queryHandler;
 
-        public WorkoutTemplateController() { }
+        //public WorkoutTemplateController() { }
 
         public WorkoutTemplateController(
             IWorkoutTemplateActionDispatcher actionDispatcher,
@@ -24,6 +25,7 @@ namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
             _queryHandler = queryHandler;
         }
 
+        [HttpGet]
         public ActionResult Get(string name = null, string description = null)
         {
             return Ok(_queryHandler.Handle(new WorkoutTemplateQuery
@@ -32,6 +34,7 @@ namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
             }));
         }
 
+        [HttpPost]
         public ActionResult Post(AddWorkoutTemplateAction action)
         {
             return Result(_actionDispatcher.Dispatch(action));

@@ -24,9 +24,10 @@ namespace WorkoutTracker.Api.NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDependencyMapping();
-            services.AddCors();
-            services.AddMvc();
+            services.AddDependencyMapping()
+                .AddCors()
+                .AddRouting()
+                .AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,9 +36,12 @@ namespace WorkoutTracker.Api.NetCore
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseCors(a => a
+                .AllowAnyHeader()
+                .AllowAnyOrigin()
+                .AllowAnyMethod());
 
-            app.UseCors(a => a.AllowAnyHeader());
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

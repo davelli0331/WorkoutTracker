@@ -15,7 +15,7 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Integration
     public class WorkoutTemplateControllerTests
     {
         private const string _connectionString =
-            @"Server=C05102\MSSQL2012;Database=WorkoutTracker;Trusted_Connection=True;";
+            @"Server=DELLXPS13\SQL2016EXPRESS;Database=WorkoutTracker;Trusted_Connection=True;";
 
         [Fact]
         public void Post_Succeeds()

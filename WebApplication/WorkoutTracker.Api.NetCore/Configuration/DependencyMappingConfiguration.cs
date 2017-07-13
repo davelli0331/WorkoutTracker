@@ -18,7 +18,7 @@ namespace WorkoutTracker.Api.NetCore.Configuration
 {
     internal static class DependencyMappingConfiguration
     {
-        internal static void AddDependencyMapping(this IServiceCollection services)
+        internal static IServiceCollection AddDependencyMapping(this IServiceCollection services)
         {
             services.AddTransient<ICommandDbContext, WorkoutDbContext>();
             services.AddTransient<IQueryDbContext, WorkoutDbContext>();
@@ -27,6 +27,8 @@ namespace WorkoutTracker.Api.NetCore.Configuration
             services.AddTransient<IQueryHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>, WorkoutTemplateQueryHandler>();
             services.AddTransient<IQueryHandler<ExerciseQuery, IEnumerable<Exercise>>, ExerciseQueryHandler>();
             services.AddTransient<IActionHandlerFactory, ActionHandlerFactory>();
+
+            return services;
         }
     }
 }
