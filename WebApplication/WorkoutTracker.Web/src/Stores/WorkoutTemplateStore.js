@@ -24,8 +24,8 @@ class WorkoutTemplateStore extends ReduceStore {
             case WorkoutTemplateTypes.FETCH_WORKOUT_TEMPLATE:
                 let asRecords = action.workoutTemplates.map((w, i) => {
                     return new WorkoutTemplate({
-                        name: w.TemplateName,
-                        description: w.TemplateDescription
+                        name: w.templateName,
+                        description: w.templateDescription
                     });
                 });
 
