@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using MediatR;
+using System.Collections.Generic;
 using System.Linq;
 using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
 using WorkoutTracker.Core.NetCore.Domain;
 using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
 
 namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
 {
-    public class ExerciseQueryHandler : IQueryHandler<ExerciseQuery, IEnumerable<Exercise>>
+    public class ExerciseQueryHandler : IRequestHandler<ExerciseQuery, IEnumerable<Exercise>>
     {
         private readonly IQueryDbContext _dbContext;
 

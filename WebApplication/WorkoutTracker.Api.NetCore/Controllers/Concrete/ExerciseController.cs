@@ -1,26 +1,24 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WorkoutTracker.Api.NetCore.Controllers.Abstract;
-using WorkoutTracker.Core.NetCore.Domain;
 using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using WorkoutTracker.Core.NetCore.QueryHandlers.Abstract;
+using MediatR;
 
 namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
 {
     public class ExerciseController : BaseController
     {
-        private IQueryHandler<ExerciseQuery, IEnumerable<Exercise>> _queryHandler;
+        private readonly IMediator _mediator;
 
         public ExerciseController() { }
 
-        public ExerciseController(IQueryHandler<ExerciseQuery, IEnumerable<Exercise>> queryHandler)
+        public ExerciseController(IMediator mediator)
         {
-            _queryHandler = queryHandler;
+            _mediator = mediator;
         }
 
         public ActionResult Get()
         {
-            return Ok(_queryHandler.Handle(new ExerciseQuery()));
+            return Ok(_mediator.Send(new ExerciseQuery()));
         }
     }
 }
