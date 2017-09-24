@@ -1,18 +1,19 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const WorkoutTemplateList = ({ workoutTemplates, addWorkoutTemplateclicked }) => {
     return (
         <div>
             <a href="#" onClick={() => addWorkoutTemplateclicked('add')}>Add new template</a>
-            <ul>
+            <ListGroup>
                 {
                     [...workoutTemplates.values()].map((template, index) => {
                         return (
-                            <li key={template.name}>{template.name}</li>
+                            <ListGroupItem key={template.name}>{template.name}</ListGroupItem>
                         )
                     })
                 }
-            </ul>
+            </ListGroup>
         </div>
     );
 }

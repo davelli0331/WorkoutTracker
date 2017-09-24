@@ -1,6 +1,7 @@
 import React from 'react';
-import Add from './Add';
-import ListContainer from '../../Containers/WorkoutTemplateListContainer';
+import WorkoutTemplateListContainer from '../../Containers/WorkoutTemplateListContainer';
+import WorkoutTemplateAddContainer from '../../Containers/WorkoutTemplate/AddContainer';
+import { PageHeader } from 'react-bootstrap';
 
 class WorkoutTemplateIndex extends React.Component {
     constructor(props) {
@@ -17,25 +18,30 @@ class WorkoutTemplateIndex extends React.Component {
         });
     }
 
-    onWorkoutTemplateAdded() {
+    onWorkoutTemplateAdded(workoutTemplateName) {
         this.setState({
-            mode: 'list'
+            addedWorkoutTemplateName: workoutTemplateName,
+            mode: 'addExercises'
         });
     }
 
     render() {
         let shownComponent;
+        switch (this.state.mode) {
+            case 'list':
+                shownComponent = <WorkoutTemplateListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
+                break;
 
-        if (this.state.mode === 'list') {
-            shownComponent = <ListContainer onAddClicked={this.onChangeModeClicked.bind(this)} />;
-        } else {
-            shownComponent = <Add OnWorkoutTemplateAdded={this.onWorkoutTemplateAdded.bind(this)} />
+            default:
+                shownComponent = <WorkoutTemplateAddContainer />
+                break;
         }
 
         return (
             <div>
-                <h3>Workout Templates</h3>
-                
+                <PageHeader>
+                    Workout Templates
+                </PageHeader>
                 {shownComponent}
             </div>
         );

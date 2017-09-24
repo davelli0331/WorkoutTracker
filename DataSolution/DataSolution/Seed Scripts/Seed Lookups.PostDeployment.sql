@@ -61,3 +61,16 @@ BEGIN
 	UNION ALL
 	SELECT 'Kettle Bells'
 END
+
+IF NOT EXISTS (SELECT 1 FROM Exercise.Exercise)
+BEGIN
+	INSERT INTO Exercise.Exercise
+	SELECT 'Bench Press', 'Do the bench press', 'Push'
+	UNION ALL
+	SELECT 'Squat', 'Do a squat', 'Push'
+	UNION ALL
+	SELECT 'Spider Curl', 'Bench equivalent to preacher curl', 'Pull'
+	UNION ALL
+	SELECT 'Band Rows', 'Rows with bands', 'Pull'
+
+END

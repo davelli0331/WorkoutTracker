@@ -2,7 +2,7 @@ import App from '../Views/App/App';
 import React from 'react';
 import { Container } from 'flux/utils';
 import WorkoutTemplateStore from '../Stores/WorkoutTemplateStore';
-import WorkoutTemplateActions from '../Actions/WorkoutTemplateActions';
+import WorkoutTemplateActions from '../Actions/WorkoutTemplate/WorkoutTemplateActions';
 
 class AppContainer extends React.Component {
     static getStores() {

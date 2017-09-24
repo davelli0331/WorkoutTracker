@@ -5,9 +5,8 @@ import Api from '../../Api/Api';
 const ExerciseActions = {
     fetch() {
         Api
-            .fetch('http://localhost/WorkoutTracker.Api/api/Exercise',
+            .fetch('http://localhost:65500/api/Exercise',
             function (exercises) {
-
                 Dispatcher.dispatch({
                     type: ActionTypes.FETCH_EXERCISES,
                     exercises
