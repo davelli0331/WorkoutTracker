@@ -5,11 +5,10 @@ using MediatR;
 
 namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
 {
+    [Route("Exercise")]
     public class ExerciseController : BaseController
     {
         private readonly IMediator _mediator;
-
-        public ExerciseController() { }
 
         public ExerciseController(IMediator mediator)
         {
@@ -19,6 +18,12 @@ namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
         public ActionResult Get()
         {
             return Ok(_mediator.Send(new ExerciseQuery()));
+        }
+
+        [Route("Index")]
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }
