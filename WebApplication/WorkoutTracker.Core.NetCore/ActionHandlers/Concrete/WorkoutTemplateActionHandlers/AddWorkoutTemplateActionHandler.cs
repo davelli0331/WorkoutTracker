@@ -1,11 +1,11 @@
-﻿using WorkoutTracker.Core.NetCore.ActionHandlers.Abstract;
+﻿using MediatR;
 using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
 using WorkoutTracker.Core.NetCore.Domain;
 
 namespace WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers
 {
-    public class AddWorkoutTemplateActionHandler : IActionHandler<AddWorkoutTemplateAction>
+    public class AddWorkoutTemplateActionHandler : IRequestHandler<AddWorkoutTemplateAction>
     {
         private readonly ICommandDbContext _dbContext;
 
