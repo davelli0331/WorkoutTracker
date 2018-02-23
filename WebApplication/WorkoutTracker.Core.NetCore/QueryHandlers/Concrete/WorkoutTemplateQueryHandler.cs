@@ -7,7 +7,7 @@ using WorkoutTracker.Core.NetCore.Queries.Concrete;
 
 namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
 {
-    public class WorkoutTemplateQueryHandler : IRequestHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>
+    public class WorkoutTemplateQueryHandler : RequestHandler<WorkoutTemplateQuery, IEnumerable<WorkoutTemplate>>
     {
         private readonly IQueryDbContext _dbContext;
         public WorkoutTemplateQueryHandler(IQueryDbContext dbContext)
@@ -15,7 +15,7 @@ namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
             _dbContext = dbContext;
         }
 
-        public IEnumerable<WorkoutTemplate> Handle(WorkoutTemplateQuery query)
+        protected override IEnumerable<WorkoutTemplate> HandleCore(WorkoutTemplateQuery query)
         {
             return _dbContext.Query<WorkoutTemplate>()
                 .Where(wt => string.IsNullOrEmpty(query.WorkoutTemplateName) || wt.TemplateName == query.WorkoutTemplateName)

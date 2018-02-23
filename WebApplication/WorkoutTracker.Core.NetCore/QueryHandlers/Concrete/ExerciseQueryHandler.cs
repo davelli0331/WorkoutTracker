@@ -7,7 +7,7 @@ using WorkoutTracker.Core.NetCore.Queries.Concrete;
 
 namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
 {
-    public class ExerciseQueryHandler : IRequestHandler<ExerciseQuery, IEnumerable<Exercise>>
+    public class ExerciseQueryHandler : RequestHandler<ExerciseQuery, IEnumerable<Exercise>>
     {
         private readonly IQueryDbContext _dbContext;
 
@@ -16,7 +16,7 @@ namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
             _dbContext = dbContext;
         }
 
-        public IEnumerable<Exercise> Handle(ExerciseQuery query)
+        protected override IEnumerable<Exercise> HandleCore(ExerciseQuery query)
         {
             return _dbContext.Query<Exercise>()
                 .OrderBy(e => e.ExerciseName)

@@ -1,14 +1,12 @@
-﻿<div>
-    Hello, @Model!
+﻿<div id="page-root">
+    <div id="div-exercise-listing">
+    </div>
 </div>
-
-<div id="div-exercise-listing">
-</div>
-
 <script src="~/dist/ExerciseIndex.bundle.js"></script>
 <script type="text/javascript">
-    
-    (function() {
-        var index = new ExerciseIndex(document);
+
+    (function () {
+        var index = new ExerciseIndex(document, "@($"http://{Context.Request.Host}{Context.Request.PathBase}")");
+        index.Initialize();
     })();
 </script>

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Component_1 = require("../../Components/Component");
 const ExerciseController_1 = require("../../Controllers/ExerciseController");
-class ExerciseIndex extends Component_1.default {
-    constructor(document) {
-        super(document.querySelector("someStuff"));
+const ApplicationRoot_1 = require("../../Utilities/ApplicationRoot");
+class ExerciseIndex extends ApplicationRoot_1.default {
+    constructor(document, baseUrl) {
+        super(baseUrl, document.querySelector("#page-root"));
         this._controller = new ExerciseController_1.default();
     }
     Initialize() {
@@ -13,5 +13,5 @@ class ExerciseIndex extends Component_1.default {
         });
     }
 }
-exports.default = ExerciseIndex;
+exports.ExerciseIndex = ExerciseIndex;
 //# sourceMappingURL=Index.js.map
