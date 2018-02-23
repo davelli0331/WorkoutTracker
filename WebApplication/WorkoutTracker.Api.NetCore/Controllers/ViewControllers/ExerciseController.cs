@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using WorkoutTracker.Api.NetCore.Controllers.Abstract;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using MediatR;
 
-namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
+namespace WorkoutTracker.Api.NetCore.Controllers.ViewControllers
 {
     [Route("Exercise")]
     public class ExerciseController : BaseController
@@ -15,12 +14,6 @@ namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
             _mediator = mediator;
         }
 
-        public ActionResult Get()
-        {
-            return Ok(_mediator.Send(new ExerciseQuery()));
-        }
-
-        [Route("Index")]
         public IActionResult Index()
         {
             return View();

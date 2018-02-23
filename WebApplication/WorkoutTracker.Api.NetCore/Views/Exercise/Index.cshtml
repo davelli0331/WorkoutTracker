@@ -1,7 +1,14 @@
-﻿@model string
-@{
-
-}
-<div>
+﻿<div>
     Hello, @Model!
 </div>
+
+<div id="div-exercise-listing">
+</div>
+
+<script src="~/dist/ExerciseIndex.bundle.js"></script>
+<script type="text/javascript">
+    
+    (function() {
+        var index = new ExerciseIndex(document);
+    })();
+</script>

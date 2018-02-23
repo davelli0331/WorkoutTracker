@@ -1,0 +1,10 @@
+﻿@model IEnumerable<WorkoutTracker.Core.NetCore.Domain.Exercise>
+
+<div>
+    @foreach (var exercise in Model)
+    {
+        <div>
+            @exercise.ExerciseName
+        </div>
+    }
+</div>

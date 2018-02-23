@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Views\Shared\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\src\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="3.0.1" />
