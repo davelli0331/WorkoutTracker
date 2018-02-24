@@ -9,7 +9,7 @@ namespace WorkoutTracker.Core.NetCore.DbContexts.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Exercise> builder)
         {
-            builder.ToTable("Exercise.Exercise");
+            builder.ToTable("Exercise", "Exercise");
 
             builder.HasKey(e => e.ExerciseId);
 

@@ -30,7 +30,7 @@ namespace WorkoutTracker.Api.NetCore
         {
             services.AddMediatR(typeof(ExerciseQueryHandler).Assembly);
 
-            services//.AddDependencyMapping()
+            services.AddDependencyMapping()
                 .AddCors()
                 .AddRouting()
                 .AddMvc();
