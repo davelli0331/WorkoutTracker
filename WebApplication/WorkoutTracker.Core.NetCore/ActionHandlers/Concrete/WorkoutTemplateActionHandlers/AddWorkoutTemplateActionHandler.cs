@@ -5,7 +5,7 @@ using WorkoutTracker.Core.NetCore.Domain;
 
 namespace WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers
 {
-    public class AddWorkoutTemplateActionHandler : IRequestHandler<AddWorkoutTemplateAction>
+    public class AddWorkoutTemplateActionHandler : RequestHandler<AddWorkoutTemplateAction>
     {
         private readonly ICommandDbContext _dbContext;
 
@@ -14,11 +14,11 @@ namespace WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateAct
             _dbContext = dbContext;
         }
 
-        public void Handle(AddWorkoutTemplateAction action)
+       protected override void HandleCore(AddWorkoutTemplateAction action)
         {
             var workoutTemplate = new WorkoutTemplate
             {
-                TemplateName =  action.Name,
+                TemplateName = action.Name,
                 TemplateDescription = action.Description
             };
 

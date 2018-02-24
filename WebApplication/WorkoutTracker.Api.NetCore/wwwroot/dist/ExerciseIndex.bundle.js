@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,71 +70,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const Component_1 = __webpack_require__(1);
-const ExerciseController_1 = __webpack_require__(2);
-class ExerciseIndex extends Component_1.default {
-    constructor(document) {
-        super(document.querySelector("someStuff"));
-        this._controller = new ExerciseController_1.default();
-    }
-    Initialize() {
-        this._controller.Get((htmlResponse) => {
-            this.RootElement.querySelector("#div-exercise-listing").innerHTML = htmlResponse;
-        });
-    }
-}
-exports.default = ExerciseIndex;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-class Component {
-    constructor(rootElement) {
-        if (!rootElement) {
-            throw 'No root element was defined for the Component';
-        }
-        this.RootElement = rootElement;
-    }
-    OnInitializing() {
-    }
-    Initialize() {
-        this.OnInitializing();
-    }
-}
-exports.default = Component;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const Router = __webpack_require__(3);
-class ExerciseController {
-    Get(onSuccess) {
-        Router.Get('api/Exercise/Get', {}, (response) => {
-            onSuccess(response);
-        });
-    }
-}
-exports.default = ExerciseController;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const UrlUtility_1 = __webpack_require__(4);
+const UrlUtility_1 = __webpack_require__(3);
 let baseUrl, mapping = {};
 mapping["api/Exercise/Get"] = { mappedUrl: "/api/Exercise/" };
 function ValidateRoute(route) {
@@ -166,7 +102,48 @@ exports.Get = Get;
 
 
 /***/ }),
-/* 4 */
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const ExerciseController_1 = __webpack_require__(2);
+const ApplicationRoot_1 = __webpack_require__(4);
+class ExerciseIndex extends ApplicationRoot_1.default {
+    constructor(document, baseUrl) {
+        super(baseUrl, document.querySelector("#page-root"));
+        this._controller = new ExerciseController_1.default();
+    }
+    Initialize() {
+        this._controller.Get((htmlResponse) => {
+            this.RootElement.querySelector("#div-exercise-listing").innerHTML = htmlResponse;
+        });
+    }
+}
+exports.ExerciseIndex = ExerciseIndex;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Router = __webpack_require__(0);
+class ExerciseController {
+    Get(onSuccess) {
+        Router.Get('api/Exercise/Get', {}, (response) => {
+            onSuccess(response);
+        });
+    }
+}
+exports.default = ExerciseController;
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -195,6 +172,47 @@ class UrlUtility {
     }
 }
 exports.default = UrlUtility;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Component_1 = __webpack_require__(5);
+const Router = __webpack_require__(0);
+class ApplicationRoot extends Component_1.default {
+    constructor(baseUrl, rootElement) {
+        super(rootElement);
+        Router.SetBaseUrl(baseUrl);
+    }
+}
+exports.default = ApplicationRoot;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+class Component {
+    constructor(rootElement) {
+        if (!rootElement) {
+            throw 'No root element was defined for the Component';
+        }
+        this.RootElement = rootElement;
+    }
+    OnInitializing() {
+    }
+    Initialize() {
+        this.OnInitializing();
+    }
+}
+exports.default = Component;
 
 
 /***/ })
