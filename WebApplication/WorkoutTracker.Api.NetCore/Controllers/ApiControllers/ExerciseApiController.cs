@@ -17,7 +17,7 @@ namespace WorkoutTracker.Api.NetCore.Controllers.ApiControllers
 
         public IActionResult Get()
         {
-            return PartialView("~/Views/Partials/Exercise/List.cshtml", _mediator.Send(new ExerciseQuery()).Result);
+            return PartialView("~/Views/Partials/Exercise/List.cshtml", _mediator.Send(new ExerciseQueryRequest()).Result);
         }
     }
 }

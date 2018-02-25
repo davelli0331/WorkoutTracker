@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Web", "WorkoutTracker.Web\WorkoutTracker.Web.csproj", "{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkoutTracker.Api.NetCore", "WorkoutTracker.Api.NetCore\WorkoutTracker.Api.NetCore.csproj", "{110D07AB-E639-4064-AAB7-90F22A8570CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Api.NetCore", "WorkoutTracker.Api.NetCore\WorkoutTracker.Api.NetCore.csproj", "{110D07AB-E639-4064-AAB7-90F22A8570CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkoutTracker.Core.NetCore", "WorkoutTracker.Core.NetCore\WorkoutTracker.Core.NetCore.csproj", "{67D54EEE-CD27-4589-9ABB-92BEA46AB59A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Core.NetCore", "WorkoutTracker.Core.NetCore\WorkoutTracker.Core.NetCore.csproj", "{67D54EEE-CD27-4589-9ABB-92BEA46AB59A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Tests.NetCore", "WorkoutTracker.Tests.NetCore\WorkoutTracker.Tests.NetCore.csproj", "{BCE99E23-D2A0-435E-AE87-845DD89B2CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkoutTracker.Tests.NetCore", "WorkoutTracker.Tests.NetCore\WorkoutTracker.Tests.NetCore.csproj", "{BCE99E23-D2A0-435E-AE87-845DD89B2CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA4FF61E-0FD7-4ECD-98D1-3B88FC463B5C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{110D07AB-E639-4064-AAB7-90F22A8570CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{110D07AB-E639-4064-AAB7-90F22A8570CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110D07AB-E639-4064-AAB7-90F22A8570CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8133E8BC-0479-4B17-A7B3-4CBD21AC09EB}
 	EndGlobalSection
 EndGlobal

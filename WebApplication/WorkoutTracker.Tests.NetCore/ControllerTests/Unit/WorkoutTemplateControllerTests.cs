@@ -16,7 +16,7 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
         public void Post_Succeeds()
         {
             var controller = new WorkoutTemplateController(_mockMediator.Object);
-            var response = controller.Post(new AddWorkoutTemplateAction
+            var response = controller.Post(new AddWorkoutTemplateRequest
             {
                 Name = "Test1",
                 Description = "TestDescription"
@@ -25,7 +25,7 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
             Assert.IsType<OkResult>(response);
 
             _mockMediator
-                .Verify(d => d.Send(It.Is<AddWorkoutTemplateAction>(a =>
+                .Verify(d => d.Send(It.Is<AddWorkoutTemplateRequest>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription"
                     ), default(CancellationToken)), Times.Once());
@@ -35,14 +35,14 @@ namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
         public void Post_Fails()
         {
             var controller = new WorkoutTemplateController(_mockMediator.Object);
-            var response = controller.Post(new AddWorkoutTemplateAction
+            var response = controller.Post(new AddWorkoutTemplateRequest
             {
                 Name = "Test1",
                 Description = "TestDescription"
             });
 
             _mockMediator
-                .Verify(d => d.Send(It.Is<AddWorkoutTemplateAction>(a =>
+                .Verify(d => d.Send(It.Is<AddWorkoutTemplateRequest>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription"
                     ), default(CancellationToken)), Times.Once());

@@ -19,8 +19,8 @@ namespace WorkoutTracker.Tests.NetCore.CommandTests.WorkoutTemplateCommandTests
         [Fact]
         public void AddWorkoutTemplateCommand_Succeeds()
         {
-            var command = new AddWorkoutTemplateActionHandler(_dbContext.Object);
-            command.Handle(new AddWorkoutTemplateAction
+            var command = new AddWorkoutTemplateHandler(_dbContext.Object);
+            command.Handle(new AddWorkoutTemplateRequest
             {
                 Name = "Test",
                 Description = "Test Description",
