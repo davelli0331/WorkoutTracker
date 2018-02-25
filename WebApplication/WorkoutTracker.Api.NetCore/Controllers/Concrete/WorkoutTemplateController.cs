@@ -21,14 +21,14 @@ namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
         [HttpGet]
         public ActionResult Get(string name = null, string description = null)
         {
-            return Ok(_mediator.Send(new WorkoutTemplateQuery
+            return Ok(_mediator.Send(new WorkoutTemplateQueryRequest
             {
                 WorkoutTemplateName = name
             }));
         }
 
         [HttpPost]
-        public ActionResult Post(AddWorkoutTemplateAction action)
+        public ActionResult Post(AddWorkoutTemplateRequest action)
         {
             _mediator.Send(action);
 

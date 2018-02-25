@@ -4,8 +4,7 @@ using WorkoutTracker.Core.NetCore.Domain;
 
 namespace WorkoutTracker.Core.NetCore.Queries.Concrete
 {
-    public class WorkoutTemplateQuery : IRequest<IEnumerable<WorkoutTemplate>>
+    public class ExerciseQueryRequest : IRequest<IEnumerable<Exercise>>
     {
-        public string WorkoutTemplateName { get; set; }
     }
 }

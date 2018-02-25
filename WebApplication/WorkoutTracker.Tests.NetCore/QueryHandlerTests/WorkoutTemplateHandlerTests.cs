@@ -16,7 +16,7 @@ namespace WorkoutTracker.Tests.NetCore.QueryHandlerTests
             var dbContext = new StubQueryDbContext(new WorkoutTemplate());
                 
             var handler = new WorkoutTemplateQueryHandler(dbContext);
-            var results = handler.Handle(new WorkoutTemplateQuery(), CancellationToken.None).Result;
+            var results = handler.Handle(new WorkoutTemplateQueryRequest(), CancellationToken.None).Result;
 
             Assert.Single(results);
         }

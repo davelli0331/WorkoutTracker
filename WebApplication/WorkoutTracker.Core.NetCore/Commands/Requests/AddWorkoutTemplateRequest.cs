@@ -4,7 +4,7 @@ using WorkoutTracker.Core.NetCore.Domain;
 
 namespace WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions
 {
-    public class AddWorkoutTemplateAction : IRequest
+    public class AddWorkoutTemplateRequest : IRequest
     {
         public string Name { get; set; }
         public string Description { get; set; }
