@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading;
 using WorkoutTracker.Core.NetCore.Domain;
 using WorkoutTracker.Core.NetCore.Queries.Concrete;
 using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
@@ -15,9 +16,9 @@ namespace WorkoutTracker.Tests.NetCore.QueryHandlerTests
             var dbContext = new StubQueryDbContext(new WorkoutTemplate());
                 
             var handler = new WorkoutTemplateQueryHandler(dbContext);
-            var results = handler.Handle(new WorkoutTemplateQuery());
+            var results = handler.Handle(new WorkoutTemplateQuery(), CancellationToken.None).Result;
 
-            Assert.Equal(1, results.Count());
+            Assert.Single(results);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading;
 using WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
 using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
 using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
@@ -34,7 +35,7 @@ namespace WorkoutTracker.Tests.NetCore.CommandTests.WorkoutTemplateCommandTests
                         PrescribedNumberOfSets = 3
                     }
                 }
-            });
+            }, CancellationToken.None);
 
             _dbContext.Verify(db => db.Create(It.Is<WorkoutTemplate>(w =>
                 w.TemplateName == "Test" &&

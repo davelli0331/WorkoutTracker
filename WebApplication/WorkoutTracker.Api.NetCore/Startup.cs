@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Autofac;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WorkoutTracker.Api.NetCore.Configuration;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
 
 namespace WorkoutTracker.Api.NetCore
 {
@@ -24,6 +28,8 @@ namespace WorkoutTracker.Api.NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMediatR(typeof(ExerciseQueryHandler).Assembly);
+
             services.AddDependencyMapping()
                 .AddCors()
                 .AddRouting()
@@ -41,7 +47,14 @@ namespace WorkoutTracker.Api.NetCore
                 .AllowAnyOrigin()
                 .AllowAnyMethod());
 
-            app.UseMvc();
+            app
+                .UseStaticFiles()
+                .UseMvc();
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
         }
     }
 }
