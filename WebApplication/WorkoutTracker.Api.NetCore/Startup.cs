@@ -50,6 +50,11 @@ namespace WorkoutTracker.Api.NetCore
             app
                 .UseStaticFiles()
                 .UseMvc();
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
         }
     }
 }
