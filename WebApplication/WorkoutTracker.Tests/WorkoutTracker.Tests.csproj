@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WorkoutTracker.Api.NetCore\WorkoutTracker.Api.NetCore.csproj" />
-    <ProjectReference Include="..\WorkoutTracker.Core.NetCore\WorkoutTracker.Core.NetCore.csproj" />
+    <ProjectReference Include="..\WorkoutTracker.Core\WorkoutTracker.Core.csproj" />
+    <ProjectReference Include="..\WorkoutTracker.Web\WorkoutTracker.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
