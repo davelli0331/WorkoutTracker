@@ -4,9 +4,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/styles/dist/site.css" rel="stylesheet" />
+    <link href="~/styles/dist/menu.css" rel="stylesheet" />
+    <link href="~/styles/dist/lists.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <nav>
+        <a asp-controller="Exercise" asp-action="Index">Exercises</a>
+        <a>Test</a>
+        <a>Test2</a>
+    </nav>
+    <div class="content">
         @RenderBody()
     </div>
 </body>

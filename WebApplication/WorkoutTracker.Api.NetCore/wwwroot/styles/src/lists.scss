@@ -1,0 +1,19 @@
+$paragraphTopAndBottomPadding: 5;
+ul.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        p {
+            margin: 0;
+            padding-top: $paragraphTopAndBottomPadding  * 1px;
+            padding-bottom: $paragraphTopAndBottomPadding * 2px;
+            &.item-body {
+                font-size: .75em;
+            }
+        }
+    }
+}
