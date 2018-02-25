@@ -1,30 +1,22 @@
-﻿using System;
-using System.Web.Http.Results;
-using Moq;
-using WorkoutTracker.Api.Controllers.Concrete;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Abstract;
-using WorkoutTracker.Core.Implementation.ActionDispatchers.Utility;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
+﻿using WorkoutTracker.Api.NetCore.Controllers.Concrete;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
 using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using System.Threading;
 
-namespace WorkoutTracker.Tests.ControllerTests.Unit
+namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
 {
     public class WorkoutTemplateControllerTests
     {
-        private readonly Mock<IWorkoutTemplateActionDispatcher> _mockDispatcher = new Mock<IWorkoutTemplateActionDispatcher>();
+        private readonly Mock<IMediator> _mockMediator = new Mock<IMediator>();
 
         [Fact]
         public void Post_Succeeds()
         {
-            _mockDispatcher
-                .Setup(d => d.Dispatch(It.IsAny<AddWorkoutTemplateAction>()))
-                .Returns(new DispatchResult
-                {
-                    Succeeded = true
-                });
-
-            var controller = new WorkoutTemplateController(_mockDispatcher.Object, null);
-            var response = controller.Post(new AddWorkoutTemplateAction
+            var controller = new WorkoutTemplateController(_mockMediator.Object);
+            var response = controller.Post(new AddWorkoutTemplateRequest
             {
                 Name = "Test1",
                 Description = "TestDescription"
@@ -32,39 +24,28 @@ namespace WorkoutTracker.Tests.ControllerTests.Unit
 
             Assert.IsType<OkResult>(response);
 
-            _mockDispatcher
-                .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
+            _mockMediator
+                .Verify(d => d.Send(It.Is<AddWorkoutTemplateRequest>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription"
-                    )), Times.Once());
+                    ), default(CancellationToken)), Times.Once());
         }
 
         [Fact]
         public void Post_Fails()
         {
-            _mockDispatcher
-                .Setup(d => d.Dispatch(It.IsAny<AddWorkoutTemplateAction>()))
-                .Returns(new DispatchResult
-                {
-                    Succeeded = false,
-                    CaughtException = new Exception("Test exception")
-                });
-
-            var controller = new WorkoutTemplateController(_mockDispatcher.Object, null);
-            var response = controller.Post(new AddWorkoutTemplateAction
+            var controller = new WorkoutTemplateController(_mockMediator.Object);
+            var response = controller.Post(new AddWorkoutTemplateRequest
             {
                 Name = "Test1",
                 Description = "TestDescription"
             });
 
-            Assert.IsType<ExceptionResult>(response);
-            Assert.True(((ExceptionResult) response).Exception.Message == "Test exception");
-
-            _mockDispatcher
-                .Verify(d => d.Dispatch(It.Is<AddWorkoutTemplateAction>(a =>
+            _mockMediator
+                .Verify(d => d.Send(It.Is<AddWorkoutTemplateRequest>(a =>
                     a.Name == "Test1" &&
                     a.Description == "TestDescription"
-                    )), Times.Once());
+                    ), default(CancellationToken)), Times.Once());
         }
     }
 }

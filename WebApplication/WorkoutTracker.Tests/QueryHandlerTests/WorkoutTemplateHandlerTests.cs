@@ -1,11 +1,12 @@
 ﻿using System.Linq;
-using WorkoutTracker.Core.Implementation.Domain;
-using WorkoutTracker.Core.Implementation.Queries.Concrete;
-using WorkoutTracker.Core.Implementation.QueryHandlers.Concrete;
-using WorkoutTracker.Tests.Stubs;
+using System.Threading;
+using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
+using WorkoutTracker.Tests.NetCore.Stubs;
 using Xunit;
 
-namespace WorkoutTracker.Tests.QueryHandlerTests
+namespace WorkoutTracker.Tests.NetCore.QueryHandlerTests
 {
     public class WorkoutTemplateHandlerTests
     {
@@ -15,9 +16,9 @@ namespace WorkoutTracker.Tests.QueryHandlerTests
             var dbContext = new StubQueryDbContext(new WorkoutTemplate());
                 
             var handler = new WorkoutTemplateQueryHandler(dbContext);
-            var results = handler.Handle(new WorkoutTemplateQuery());
+            var results = handler.Handle(new WorkoutTemplateQueryRequest(), CancellationToken.None).Result;
 
-            Assert.Equal(1, results.Count());
+            Assert.Single(results);
         }
     }
 }

@@ -1,0 +1,16 @@
+﻿@{ 
+    ViewBag.Title = "Exercises";
+}
+
+<div id="page-root">
+    <div id="div-exercise-listing">
+    </div>
+</div>
+<script src="~/js/dist/ExerciseIndex.bundle.js"></script>
+<script type="text/javascript">
+
+    (function () {
+        var index = new ExerciseIndex(document, "@($"http://{Context.Request.Host}{Context.Request.PathBase}")");
+        index.Initialize();
+    })();
+</script>

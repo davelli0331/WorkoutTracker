@@ -1,0 +1,13 @@
+nav {
+  vertical-align: top;
+  width: 100%;
+  background-color: #333333;
+  padding: 0;
+  margin: 0; }
+  nav a {
+    text-decoration: none;
+    padding: 16px;
+    color: lightgrey;
+    display: inline-block; }
+    nav a:hover {
+      background-color: #777777; }

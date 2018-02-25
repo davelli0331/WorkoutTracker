@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Moq;
-using WorkoutTracker.Core.Implementation.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
-using WorkoutTracker.Core.Implementation.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.Implementation.DbContexts.Abstract;
-using WorkoutTracker.Core.Implementation.Domain;
-using Xunit;
 using System.Linq.Expressions;
-using System;
+using System.Threading;
+using WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
+using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
+using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
+using WorkoutTracker.Core.NetCore.Domain;
+using Xunit;
+using Moq;
 
-namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
+namespace WorkoutTracker.Tests.NetCore.CommandTests.WorkoutTemplateCommandTests
 {
     public class AddWorkoutTemplateCommandTests
     {
@@ -18,8 +19,8 @@ namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
         [Fact]
         public void AddWorkoutTemplateCommand_Succeeds()
         {
-            var command = new AddWorkoutTemplateActionHandler(_dbContext.Object);
-            command.Handle(new AddWorkoutTemplateAction
+            var command = new AddWorkoutTemplateHandler(_dbContext.Object);
+            command.Handle(new AddWorkoutTemplateRequest
             {
                 Name = "Test",
                 Description = "Test Description",
@@ -34,7 +35,7 @@ namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
                         PrescribedNumberOfSets = 3
                     }
                 }
-            });
+            }, CancellationToken.None);
 
             _dbContext.Verify(db => db.Create(It.Is<WorkoutTemplate>(w =>
                 w.TemplateName == "Test" &&

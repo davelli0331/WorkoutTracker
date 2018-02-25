@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WorkoutTracker.Core.NetCore.Domain.Exercise>
+
+<ul class="info-list">
+    @foreach (var exercise in Model.OrderBy(e => e.ExerciseName))
+    {
+        <li>
+            <p>
+                <strong>
+                    @exercise.ExerciseName
+                </strong>
+            </p>
+            <p class="item-body">
+                @exercise.Instruction
+            </p>
+        </li>
+    }
+</ul>
