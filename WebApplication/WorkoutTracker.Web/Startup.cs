@@ -1,15 +1,13 @@
-﻿using Autofac;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WorkoutTracker.Api.NetCore.Configuration;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
+using WorkoutTracker.Core.Queries.Handlers;
+using WorkoutTracker.Web.Configuration;
 
-namespace WorkoutTracker.Api.NetCore
+namespace WorkoutTracker.Web
 {
     public class Startup
     {

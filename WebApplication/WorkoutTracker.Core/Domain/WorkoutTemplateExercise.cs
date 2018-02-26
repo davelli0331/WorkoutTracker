@@ -1,4 +1,4 @@
-﻿namespace WorkoutTracker.Core.NetCore.Domain
+﻿namespace WorkoutTracker.Core.Domain
 {
     public class WorkoutTemplateExercise
     {

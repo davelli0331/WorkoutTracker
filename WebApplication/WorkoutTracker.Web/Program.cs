@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace WorkoutTracker.Api.NetCore
+namespace WorkoutTracker.Web
 {
     public class Program
     {

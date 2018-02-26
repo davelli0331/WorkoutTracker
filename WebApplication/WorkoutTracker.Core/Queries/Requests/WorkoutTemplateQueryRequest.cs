@@ -1,8 +1,8 @@
-﻿using MediatR;
-using System.Collections.Generic;
-using WorkoutTracker.Core.NetCore.Domain;
+﻿using System.Collections.Generic;
+using MediatR;
+using WorkoutTracker.Core.Domain;
 
-namespace WorkoutTracker.Core.NetCore.Queries.Concrete
+namespace WorkoutTracker.Core.Queries.Requests
 {
     public class WorkoutTemplateQueryRequest : IRequest<IEnumerable<WorkoutTemplate>>
     {

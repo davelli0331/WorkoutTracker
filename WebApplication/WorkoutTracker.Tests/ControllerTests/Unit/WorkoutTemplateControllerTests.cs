@@ -1,12 +1,12 @@
-﻿using WorkoutTracker.Api.NetCore.Controllers.Concrete;
-using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
-using Xunit;
-using Moq;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading;
 using MediatR;
-using System.Threading;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+using WorkoutTracker.Core.Commands.Requests;
+using WorkoutTracker.Web.Controllers.Concrete;
+using Xunit;
 
-namespace WorkoutTracker.Tests.NetCore.ControllerTests.Unit
+namespace WorkoutTracker.Tests.ControllerTests.Unit
 {
     public class WorkoutTemplateControllerTests
     {

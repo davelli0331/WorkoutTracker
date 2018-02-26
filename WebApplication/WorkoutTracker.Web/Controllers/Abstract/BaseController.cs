@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WorkoutTracker.Api.NetCore.Controllers.Abstract
+namespace WorkoutTracker.Web.Controllers.Abstract
 {
     public class BaseController : Controller
     {

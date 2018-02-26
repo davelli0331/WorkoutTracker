@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace WorkoutTracker.Core.NetCore.DbContexts.Utility
+namespace WorkoutTracker.Core.DbContexts.Utility
 {
     internal static class ModelBuilderExtensions
     {

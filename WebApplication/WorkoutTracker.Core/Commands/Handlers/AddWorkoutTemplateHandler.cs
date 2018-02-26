@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.Commands.Requests;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.Domain;
 
-namespace WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers
+namespace WorkoutTracker.Core.Commands.Handlers
 {
     public class AddWorkoutTemplateHandler : RequestHandler<AddWorkoutTemplateRequest>
     {

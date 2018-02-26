@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace WorkoutTracker.Core.NetCore.DbContexts.Utility
+namespace WorkoutTracker.Core.DbContexts.Utility
 {
     internal interface IEntityConfiguration<TEntity> where TEntity : class
     {

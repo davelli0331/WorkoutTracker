@@ -1,9 +1,8 @@
-﻿using MediatR;
-using Microsoft.Extensions.DependencyInjection;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.DbContexts.Concrete;
+﻿using Microsoft.Extensions.DependencyInjection;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.DbContexts.Concrete;
 
-namespace WorkoutTracker.Api.NetCore.Configuration
+namespace WorkoutTracker.Web.Configuration
 {
     internal static class DependencyMappingConfiguration
     {

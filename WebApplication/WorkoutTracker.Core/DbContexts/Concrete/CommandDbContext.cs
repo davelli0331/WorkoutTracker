@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.DbContexts.EntityConfigurations;
-using WorkoutTracker.Core.NetCore.DbContexts.Utility;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.DbContexts.EntityConfigurations;
+using WorkoutTracker.Core.DbContexts.Utility;
 
-namespace WorkoutTracker.Core.NetCore.DbContexts.Concrete
+namespace WorkoutTracker.Core.DbContexts.Concrete
 {
     public class WorkoutDbContext : DbContext, ICommandDbContext, IQueryDbContext
     {
-        private readonly string _connectionString = @"Server=DELLXPS13\SQL2016EXPRESS;Database=WorkoutTracker;Trusted_Connection=True;";
+        private readonly string _connectionString = @"Server=C05102\MSSQL2016;Database=WorkoutTracker;Trusted_Connection=True;";
 
         public WorkoutDbContext()
         {

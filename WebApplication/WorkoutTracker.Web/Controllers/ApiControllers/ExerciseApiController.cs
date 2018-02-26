@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WorkoutTracker.Api.NetCore.Controllers.Abstract;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using WorkoutTracker.Core.Queries.Requests;
+using WorkoutTracker.Web.Controllers.Abstract;
 
-namespace WorkoutTracker.Api.NetCore.Controllers.ApiControllers
+namespace WorkoutTracker.Web.Controllers.ApiControllers
 {
     [Route("api/Exercise")]
     public class ExerciseApiController : BaseController

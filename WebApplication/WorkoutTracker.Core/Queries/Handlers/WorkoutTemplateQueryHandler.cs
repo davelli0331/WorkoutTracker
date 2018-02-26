@@ -1,11 +1,11 @@
-﻿using MediatR;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.Domain;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
+using MediatR;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.Domain;
+using WorkoutTracker.Core.Queries.Requests;
 
-namespace WorkoutTracker.Core.NetCore.QueryHandlers.Concrete
+namespace WorkoutTracker.Core.Queries.Handlers
 {
     public class WorkoutTemplateQueryHandler : RequestHandler<WorkoutTemplateQueryRequest, IEnumerable<WorkoutTemplate>>
     {

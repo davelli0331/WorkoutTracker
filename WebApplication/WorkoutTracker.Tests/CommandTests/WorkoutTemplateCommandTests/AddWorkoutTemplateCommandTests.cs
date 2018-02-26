@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
-using WorkoutTracker.Core.NetCore.ActionHandlers.Concrete.WorkoutTemplateActionHandlers;
-using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.Domain;
-using Xunit;
 using Moq;
+using WorkoutTracker.Core.Commands.Handlers;
+using WorkoutTracker.Core.Commands.Requests;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.Domain;
+using Xunit;
 
-namespace WorkoutTracker.Tests.NetCore.CommandTests.WorkoutTemplateCommandTests
+namespace WorkoutTracker.Tests.CommandTests.WorkoutTemplateCommandTests
 {
     public class AddWorkoutTemplateCommandTests
     {

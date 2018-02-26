@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WorkoutTracker.Core.NetCore.DbContexts.Abstract;
-using WorkoutTracker.Core.NetCore.Domain;
+using WorkoutTracker.Core.DbContexts.Abstract;
+using WorkoutTracker.Core.Domain;
 
-namespace WorkoutTracker.Tests.NetCore.Stubs
+namespace WorkoutTracker.Tests.Stubs
 {
     public class StubQueryDbContext : IQueryDbContext
     {

@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WorkoutTracker.Api.NetCore.Controllers.Abstract;
-using WorkoutTracker.Core.NetCore.Actions.WorkoutTemplateActions;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using WorkoutTracker.Core.Commands.Requests;
+using WorkoutTracker.Core.Queries.Requests;
+using WorkoutTracker.Web.Controllers.Abstract;
 
-namespace WorkoutTracker.Api.NetCore.Controllers.Concrete
+namespace WorkoutTracker.Web.Controllers.Concrete
 {
     [Route("api/[controller]")]
     public class WorkoutTemplateController : BaseController

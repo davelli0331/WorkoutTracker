@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using System.Threading;
-using WorkoutTracker.Core.NetCore.Domain;
-using WorkoutTracker.Core.NetCore.Queries.Concrete;
-using WorkoutTracker.Core.NetCore.QueryHandlers.Concrete;
-using WorkoutTracker.Tests.NetCore.Stubs;
+﻿using System.Threading;
+using WorkoutTracker.Core.Domain;
+using WorkoutTracker.Core.Queries.Handlers;
+using WorkoutTracker.Core.Queries.Requests;
+using WorkoutTracker.Tests.Stubs;
 using Xunit;
 
-namespace WorkoutTracker.Tests.NetCore.QueryHandlerTests
+namespace WorkoutTracker.Tests.QueryHandlerTests
 {
     public class WorkoutTemplateHandlerTests
     {
