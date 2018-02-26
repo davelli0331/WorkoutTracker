@@ -15,4 +15,14 @@ export default class Component {
 	Initialize() : void {
 		this.OnInitializing();
 	}
+
+	Show() {
+		this.RootElement.classList.remove("is-not-visible");
+		this.RootElement.classList.add("is-visible");
+	}
+
+	Hide() {
+		this.RootElement.classList.add("is-not-visible");
+		this.RootElement.classList.remove("is-visible");
+	}
 }

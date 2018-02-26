@@ -93,8 +93,37 @@ class Component {
     Initialize() {
         this.OnInitializing();
     }
+    Show() {
+        this.RootElement.classList.remove("is-not-visible");
+        this.RootElement.classList.add("is-visible");
+    }
+    Hide() {
+        this.RootElement.classList.add("is-not-visible");
+        this.RootElement.classList.remove("is-visible");
+    }
 }
 exports.default = Component;
+
+
+/***/ }),
+
+/***/ "./Components/Exercise/AddNewExercist.ts":
+/*!***********************************************!*\
+  !*** ./Components/Exercise/AddNewExercist.ts ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Component_1 = __webpack_require__(/*! ../Component */ "./Components/Component.ts");
+class AddNewExercise extends Component_1.default {
+    constructor(rootElement) {
+        super(rootElement);
+    }
+}
+exports.default = AddNewExercise;
 
 
 /***/ }),
@@ -237,12 +266,18 @@ exports.default = UrlUtility;
 Object.defineProperty(exports, "__esModule", { value: true });
 const ExerciseController_1 = __webpack_require__(/*! ../../Controllers/ExerciseController */ "./Controllers/ExerciseController.ts");
 const ApplicationRoot_1 = __webpack_require__(/*! ../../Utilities/ApplicationRoot */ "./Utilities/ApplicationRoot.ts");
+const AddNewExercist_1 = __webpack_require__(/*! ../../Components/Exercise/AddNewExercist */ "./Components/Exercise/AddNewExercist.ts");
 class ExerciseIndex extends ApplicationRoot_1.default {
     constructor(document, baseUrl) {
         super(baseUrl, document.querySelector("#page-root"));
         this._controller = new ExerciseController_1.default();
     }
     Initialize() {
+        var newExcerciseComponent = new AddNewExercist_1.default(this.RootElement.querySelector("#fieldset-add-new-exercise"));
+        newExcerciseComponent.Initialize();
+        this.RootElement.querySelector("#span-add-new-exercise").addEventListener("click", (e) => {
+            newExcerciseComponent.Show();
+        });
         this._controller.Get((htmlResponse) => {
             this.RootElement.querySelector("#div-exercise-listing").innerHTML = htmlResponse;
         });
