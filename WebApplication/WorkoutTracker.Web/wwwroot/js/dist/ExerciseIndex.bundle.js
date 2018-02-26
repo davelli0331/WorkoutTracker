@@ -44,6 +44,11 @@
 /******/ 		}
 /******/ 	};
 /******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -59,18 +64,98 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./Views/Exercise/Index.ts");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./Components/Component.ts":
+/*!*********************************!*\
+  !*** ./Components/Component.ts ***!
+  \*********************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const UrlUtility_1 = __webpack_require__(3);
+class Component {
+    constructor(rootElement) {
+        if (!rootElement) {
+            throw 'No root element was defined for the Component';
+        }
+        this.RootElement = rootElement;
+    }
+    OnInitializing() {
+    }
+    Initialize() {
+        this.OnInitializing();
+    }
+}
+exports.default = Component;
+
+
+/***/ }),
+
+/***/ "./Controllers/ExerciseController.ts":
+/*!*******************************************!*\
+  !*** ./Controllers/ExerciseController.ts ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Router = __webpack_require__(/*! ../Utilities/Router */ "./Utilities/Router.ts");
+class ExerciseController {
+    Get(onSuccess) {
+        Router.Get('api/Exercise/Get', {}, (response) => {
+            onSuccess(response);
+        });
+    }
+}
+exports.default = ExerciseController;
+
+
+/***/ }),
+
+/***/ "./Utilities/ApplicationRoot.ts":
+/*!**************************************!*\
+  !*** ./Utilities/ApplicationRoot.ts ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Component_1 = __webpack_require__(/*! ../Components/Component */ "./Components/Component.ts");
+const Router = __webpack_require__(/*! ../Utilities/Router */ "./Utilities/Router.ts");
+class ApplicationRoot extends Component_1.default {
+    constructor(baseUrl, rootElement) {
+        super(rootElement);
+        Router.SetBaseUrl(baseUrl);
+    }
+}
+exports.default = ApplicationRoot;
+
+
+/***/ }),
+
+/***/ "./Utilities/Router.ts":
+/*!*****************************!*\
+  !*** ./Utilities/Router.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const UrlUtility_1 = __webpack_require__(/*! ./UrlUtility */ "./Utilities/UrlUtility.ts");
 let baseUrl, mapping = {};
 mapping["api/Exercise/Get"] = { mappedUrl: "/api/Exercise/" };
 function ValidateRoute(route) {
@@ -102,48 +187,12 @@ exports.Get = Get;
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const ExerciseController_1 = __webpack_require__(2);
-const ApplicationRoot_1 = __webpack_require__(4);
-class ExerciseIndex extends ApplicationRoot_1.default {
-    constructor(document, baseUrl) {
-        super(baseUrl, document.querySelector("#page-root"));
-        this._controller = new ExerciseController_1.default();
-    }
-    Initialize() {
-        this._controller.Get((htmlResponse) => {
-            this.RootElement.querySelector("#div-exercise-listing").innerHTML = htmlResponse;
-        });
-    }
-}
-exports.ExerciseIndex = ExerciseIndex;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const Router = __webpack_require__(0);
-class ExerciseController {
-    Get(onSuccess) {
-        Router.Get('api/Exercise/Get', {}, (response) => {
-            onSuccess(response);
-        });
-    }
-}
-exports.default = ExerciseController;
-
-
-/***/ }),
-/* 3 */
+/***/ "./Utilities/UrlUtility.ts":
+/*!*********************************!*\
+  !*** ./Utilities/UrlUtility.ts ***!
+  \*********************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -175,46 +224,34 @@ exports.default = UrlUtility;
 
 
 /***/ }),
-/* 4 */
+
+/***/ "./Views/Exercise/Index.ts":
+/*!*********************************!*\
+  !*** ./Views/Exercise/Index.ts ***!
+  \*********************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const Component_1 = __webpack_require__(5);
-const Router = __webpack_require__(0);
-class ApplicationRoot extends Component_1.default {
-    constructor(baseUrl, rootElement) {
-        super(rootElement);
-        Router.SetBaseUrl(baseUrl);
-    }
-}
-exports.default = ApplicationRoot;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-class Component {
-    constructor(rootElement) {
-        if (!rootElement) {
-            throw 'No root element was defined for the Component';
-        }
-        this.RootElement = rootElement;
-    }
-    OnInitializing() {
+const ExerciseController_1 = __webpack_require__(/*! ../../Controllers/ExerciseController */ "./Controllers/ExerciseController.ts");
+const ApplicationRoot_1 = __webpack_require__(/*! ../../Utilities/ApplicationRoot */ "./Utilities/ApplicationRoot.ts");
+class ExerciseIndex extends ApplicationRoot_1.default {
+    constructor(document, baseUrl) {
+        super(baseUrl, document.querySelector("#page-root"));
+        this._controller = new ExerciseController_1.default();
     }
     Initialize() {
-        this.OnInitializing();
+        this._controller.Get((htmlResponse) => {
+            this.RootElement.querySelector("#div-exercise-listing").innerHTML = htmlResponse;
+        });
     }
 }
-exports.default = Component;
+exports.ExerciseIndex = ExerciseIndex;
 
 
 /***/ })
-/******/ ])));
+
+/******/ })));
 //# sourceMappingURL=ExerciseIndex.bundle.js.map

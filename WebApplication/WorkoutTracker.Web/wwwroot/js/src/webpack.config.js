@@ -18,10 +18,9 @@ module.exports = {
 	},
 
 	module: {
-		loaders: [{
-			test: /\.tsx?$/,
-			exclude: /node_modules/,
-			loader: "ts-loader"
+		rules: [{
+			test: /\.ts$/,
+			use: 'ts-loader'
 		}]
 	},
 
@@ -29,5 +28,6 @@ module.exports = {
 		fs: 'empty'
 	},
 
-	devtool: "source-map"
+	devtool: "source-map",
+	mode: "development"
 }
