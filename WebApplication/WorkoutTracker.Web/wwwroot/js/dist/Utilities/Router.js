@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const UrlUtility_1 = require("./UrlUtility");
 let baseUrl, mapping = {};
-mapping["api/Exercise/Get"] = { mappedUrl: "/api/Exercise/" };
+mapping["Exercise"] = { mappedUrl: "/api/Exercise/" };
 function ValidateRoute(route) {
     return mapping[route] != undefined;
 }
@@ -29,4 +29,23 @@ function Get(route, options, onsuccess) {
     request.send();
 }
 exports.Get = Get;
+function Post(route, options, onsuccess) {
+    if (!ValidateRoute(route)) {
+        throw "Given route has no mapped URL";
+    }
+    const url = new UrlUtility_1.default(baseUrl.concat(mapping[route].mappedUrl))
+        .Build();
+    const request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.onreadystatechange = (e) => {
+        if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+            if (onsuccess) {
+                onsuccess(request.response);
+            }
+        }
+    };
+    request.send(JSON.stringify(options));
+}
+exports.Post = Post;
 //# sourceMappingURL=Router.js.map

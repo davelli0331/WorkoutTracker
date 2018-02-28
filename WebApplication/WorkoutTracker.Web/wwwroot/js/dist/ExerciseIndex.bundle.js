@@ -187,6 +187,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const UrlUtility_1 = __webpack_require__(/*! ./UrlUtility */ "./Utilities/UrlUtility.ts");
 let baseUrl, mapping = {};
 mapping["api/Exercise/Get"] = { mappedUrl: "/api/Exercise/" };
+mapping["api/Exercise/Post"] = { mappedUrl: "/a" };
 function ValidateRoute(route) {
     return mapping[route] != undefined;
 }
