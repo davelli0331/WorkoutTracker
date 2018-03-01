@@ -24,7 +24,7 @@ namespace WorkoutTracker.Web.Controllers.ApiControllers
         }
 
         [HttpPost]
-        public ActionResult Post(AddExerciseCommandRequest request)
+        public ActionResult Post([FromBody] AddExerciseCommandRequest request)
         {
             _mediator.Send(request, CancellationToken.None);
 

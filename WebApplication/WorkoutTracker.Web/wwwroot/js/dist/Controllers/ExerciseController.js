@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Router = require("../Utilities/Router");
 class ExerciseController {
     constructor() {
-        this._route = "Excercise";
+        this._route = "Exercise";
     }
     Get(onSuccess) {
         Router.Get(this._route, {}, (response) => {
@@ -11,7 +11,10 @@ class ExerciseController {
         });
     }
     Post(exercise, onSuccess) {
-        Router.Post(this._route, exercise, (response) => {
+        var request = {
+            request: exercise
+        };
+        Router.Post(this._route, request, (response) => {
             onSuccess(response);
         });
     }

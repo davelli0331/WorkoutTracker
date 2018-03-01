@@ -118,9 +118,22 @@ exports.default = Component;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const Component_1 = __webpack_require__(/*! ../Component */ "./Components/Component.ts");
+const ExerciseController_1 = __webpack_require__(/*! ../../Controllers/ExerciseController */ "./Controllers/ExerciseController.ts");
 class AddNewExercise extends Component_1.default {
     constructor(rootElement) {
         super(rootElement);
+        this._controller = new ExerciseController_1.default();
+    }
+    Initialize() {
+        this.RootElement.querySelector("button[type=\"submit\"]").addEventListener("click", (e) => {
+            const exerciseRequest = {
+                ExerciseName: 'Test',
+                Instruction: 'Test',
+                PushPullIndicator: 'Push'
+            };
+            this._controller.Post(exerciseRequest, (response) => {
+            });
+        });
     }
 }
 exports.default = AddNewExercise;
@@ -140,8 +153,19 @@ exports.default = AddNewExercise;
 Object.defineProperty(exports, "__esModule", { value: true });
 const Router = __webpack_require__(/*! ../Utilities/Router */ "./Utilities/Router.ts");
 class ExerciseController {
+    constructor() {
+        this._route = "Exercise";
+    }
     Get(onSuccess) {
-        Router.Get('api/Exercise/Get', {}, (response) => {
+        Router.Get(this._route, {}, (response) => {
+            onSuccess(response);
+        });
+    }
+    Post(exercise, onSuccess) {
+        // var request = {
+        // 	request: exercise
+        // };
+        Router.Post(this._route, exercise, (response) => {
             onSuccess(response);
         });
     }
@@ -186,8 +210,7 @@ exports.default = ApplicationRoot;
 Object.defineProperty(exports, "__esModule", { value: true });
 const UrlUtility_1 = __webpack_require__(/*! ./UrlUtility */ "./Utilities/UrlUtility.ts");
 let baseUrl, mapping = {};
-mapping["api/Exercise/Get"] = { mappedUrl: "/api/Exercise/" };
-mapping["api/Exercise/Post"] = { mappedUrl: "/a" };
+mapping["Exercise"] = { mappedUrl: "/api/Exercise/" };
 function ValidateRoute(route) {
     return mapping[route] != undefined;
 }
@@ -214,6 +237,25 @@ function Get(route, options, onsuccess) {
     request.send();
 }
 exports.Get = Get;
+function Post(route, options, onsuccess) {
+    if (!ValidateRoute(route)) {
+        throw "Given route has no mapped URL";
+    }
+    const url = new UrlUtility_1.default(baseUrl.concat(mapping[route].mappedUrl))
+        .Build();
+    const request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.onreadystatechange = (e) => {
+        if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+            if (onsuccess) {
+                onsuccess(request.response);
+            }
+        }
+    };
+    request.send(JSON.stringify(options));
+}
+exports.Post = Post;
 
 
 /***/ }),
