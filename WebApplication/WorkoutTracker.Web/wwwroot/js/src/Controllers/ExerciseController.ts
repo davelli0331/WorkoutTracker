@@ -1,4 +1,4 @@
-import * as Router from '../Utilities/Router';
+import { Router } from '../Utilities/Router';
 
 export default class ExerciseController {
 	private readonly _route = "Exercise";
@@ -10,10 +10,6 @@ export default class ExerciseController {
 	}
 
 	Post(exercise: any, onSuccess: (response: any) => void): void {
-		// var request = {
-		// 	request: exercise
-		// };
-
 		Router.Post(this._route, exercise, (response) => {
 			onSuccess(response);
 		});
