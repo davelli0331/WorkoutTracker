@@ -1,5 +1,5 @@
 import Component from "../Components/Component";
-import * as Router from "../Utilities/Router";
+import { Router } from "../Utilities/Router";
 
 export default class ApplicationRoot extends Component {
 	constructor(baseUrl: string, rootElement: HTMLElement) {

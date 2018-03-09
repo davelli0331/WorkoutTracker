@@ -9,6 +9,10 @@ export default class AddExerciseRequest implements IMessageRequest {
 		exerciseName: string,
 		insruction: string,
 		pushPullIndicator: string
+	} = {
+		exerciseName: "",
+		insruction: "",
+		pushPullIndicator: ""
 	}) {
 		this.ExerciseName = options.exerciseName;
 		this.Instruction = options.insruction;
@@ -23,11 +27,11 @@ export default class AddExerciseRequest implements IMessageRequest {
 		return "POST";
 	}
 
-	BuildMessage(): string {
-		return JSON.stringify({
+	BuildMessage(): any {
+		return {
 			ExerciseName: this.ExerciseName,
 			Instruction: this.Instruction,
 			PushPullIndicator: this.PushPullIndicator
-		});
+		};
 	}
 }

@@ -10,6 +10,7 @@ export namespace Messenger {
 	var callBacks = new Array<MessageCallback>();
 
 	function processResponse(request: IMessageRequest, response: any) {
+		
 		callBacks.forEach(messageCallback => {
 			if (messageCallback.MessageType == request) {
 				messageCallback

@@ -1,6 +1,7 @@
 import ExerciseController from "../../Controllers/ExerciseController";
 import ApplicationRoot from "../../Utilities/ApplicationRoot";
-import AddNewExcercise from "../../Components/Exercise/AddNewExercist";
+import AddNewExcercise from "../../Components/Exercise/AddNewExercis";
+import { Messenger } from "../../Messenging/Messenger";
 
 export class ExerciseIndex extends ApplicationRoot {
 	private readonly _controller: ExerciseController;
